@@ -7,6 +7,7 @@
 - Python (2 or 3)
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
 
+
 ## Initialise
 
 ```
@@ -26,6 +27,10 @@ Ideally you should be using virtual environments, alternatively you can use the
 ```
 pip install --user -r mbed-os/requirements.txt
 ```
+
+**Warning:** Do not use `mbed new .`, this will update MbedOS to the latest
+version, and this is often unwanted.
+
 
 ## Building
 
