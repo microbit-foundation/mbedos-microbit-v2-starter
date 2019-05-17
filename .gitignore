@@ -13,6 +13,9 @@ yotta_modules
 __pycache__/
 *.py[cod]
 
+# The Mbed OS source folder is managed by mbed-cli
+mbed-os/
+
 
 ############
 # OS files #
