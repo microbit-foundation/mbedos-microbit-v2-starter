@@ -1,9 +1,24 @@
 # Example nRF52 project for Mbed OS
 
+## Table of contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Using Mbed](#using-mbed)
+- [Using Make](#using-make)
+- [Visual Studio Code](#visual-studio-code)
+- [Contributing](#contributing)
+- [License](#license)
+
+
+## Features
+
+TBD.
+
+
 ## Requirements
 
 - git
-- make
 - Arm GCC
 - Python (2 or 3, at the moment Python 2 might be preferred)
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli) or Make
@@ -13,7 +28,7 @@
 
 ### Install dependencies
 
-Install mbed-cli using one of the methods from the official website:
+Install mbed-cli using one of the methods from the official documentation:
 https://os.mbed.com/docs/mbed-os/v5.12/tools/developing-mbed-cli.html
 
 The manual installation (in a Python virtual environment) is the prefer method.
@@ -40,7 +55,7 @@ Ideally you should be using virtual environments, alternatively you can use the
 pip install --user -r mbed-os/requirements.txt
 ```
 
-**Warning:** Do not use `mbed new .`, this will update MbedOS to the latest
+**Warning:** Do not use `mbed new .` as it will update MbedOS to the latest
 version, and this is often unwanted.
 
 ### Build
@@ -52,7 +67,7 @@ mbed compile -m nrf52_dk -t GCC_ARM
 Build output can be found in: `TBD`
 
 
-## Using Makefile
+## Using Make
 
 ### Initialise
 
@@ -91,3 +106,13 @@ Build output can be found in: `TBD`
 
 At the moment we have the default config files from the Mbed online compiler
 project exporter. These are using `make` but could be updated to use `mbed-cli`.
+
+
+## Contributing
+
+TBD.
+
+
+## License
+
+TBD.
