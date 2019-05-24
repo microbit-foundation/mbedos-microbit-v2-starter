@@ -19,9 +19,17 @@ TBD.
 ## Requirements
 
 - git
-- Arm GCC
+- [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+
+**Mbed only requirements:**
 - Python (2 or 3, at the moment Python 2 might be preferred)
-- [Mbed CLI](https://github.com/ARMmbed/mbed-cli) or Make
+- pip (version >=10.0)
+- Mercurial
+- [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
+
+**Make only requirements:**
+- srec_cat
+- Make
 
 
 ## Using Mbed
@@ -31,7 +39,7 @@ TBD.
 Install mbed-cli using one of the methods from the official documentation:
 https://os.mbed.com/docs/mbed-os/v5.12/tools/developing-mbed-cli.html
 
-The manual installation (in a Python virtual environment) is the prefer method.
+The manual installation (in a Python 2 virtual environment) is the prefer method.
 
 ### Initialise
 
@@ -64,7 +72,7 @@ version, and this is often unwanted.
 mbed compile -m nrf52_dk -t GCC_ARM
 ```
 
-Build output can be found in: `TBD`
+Build output can be found in: `./BUILD/NRF52_DK/GCC_ARM/mbedos-project.hex`
 
 
 ## Using Make
@@ -99,7 +107,7 @@ From the `mbedos-nrf52-starter` folder run:
 make
 ```
 
-Build output can be found in: `TBD`
+Build output can be found in: `BUILD/nrf52-mbed-os-blinky-combined.hex`
 
 
 ## Visual Studio Code
