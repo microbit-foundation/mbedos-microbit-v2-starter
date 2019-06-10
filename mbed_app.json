@@ -6,8 +6,12 @@
             "platform.heap-stats-enabled": true,
             "platform.cpu-stats-enabled": true,
             "platform.thread-stats-enabled": true,
-            "platform.sys-stats-enabled": true,
+            "platform.sys-stats-enabled": true
+        },
+        "NRF52_DK": {
             "target.lf_clock_src": "NRF_LF_SRC_RC"
+        },
+        "NRF52_MICROBIT": {
         }
     }
 }

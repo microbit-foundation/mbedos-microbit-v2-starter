@@ -79,10 +79,10 @@ Or if you want to manually add the flags previously configured in the project
 on the "Initialise" section:
 
 ```
-mbed compile -m nrf52_dk -t GCC_ARM
+mbed compile -m nrf52_microbit -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_DK/GCC_ARM/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT/GCC_ARM/mbedos-project.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
