@@ -46,11 +46,14 @@ The manual installation (in a Python 2 virtual environment) is the prefer method
 ```
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
+mbed config root .
+mbed target nrf52_dk
+mbed toolchain GCC_ARM
 mbed deploy
 ```
 
-If it fails to install some of the Python dependencies you can try again
-manually:
+If it fails to install some of the Python dependencies on the last command (
+`mbed deploy`) you can try again manually:
 
 ```
 pip install -r mbed-os/requirements.txt
@@ -63,10 +66,17 @@ Ideally you should be using virtual environments, alternatively you can use the
 pip install --user -r mbed-os/requirements.txt
 ```
 
-**Warning:** Do not use `mbed new .` as it will update MbedOS to the latest
+**Warning:** Do not use `mbed new .` as it can update MbedOS to the latest
 version, and this is often unwanted.
 
 ### Build
+
+```
+mbed compile
+```
+
+Or if you want to manually add the flags previously configured in the project
+on the "Initialise" section:
 
 ```
 mbed compile -m nrf52_dk -t GCC_ARM
