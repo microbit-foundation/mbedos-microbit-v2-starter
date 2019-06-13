@@ -1,4 +1,5 @@
 mbed-os/rtos/*
+mbed-os/usb/*
 mbed-os/features/cellular/
 mbed-os/features/FEATURE_CLIENT/*
 mbed-os/features/FEATURE_COMMON_PAL/*
@@ -11,5 +12,8 @@ mbed-os/features/nvstore/*
 mbed-os/features/storage/*
 mbed-os/features/device_key/*
 mbed-os/features/lorawan/*
-mbed-os/events/*
 mbed-os/features/lwipstack/*
+mbed-os/features/nfc/*
+mbed-os/features/unsupported/*
+mbed-os/events/*
+mbed-os/components/802.15.4_RF/*
