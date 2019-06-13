@@ -5,6 +5,7 @@
 #include "hal/nrf_gpio.h"
 #include "hal/nrf_gpiote.h"
 #include "PinNames.h"
+#include "FXOS8700Q/FXOS8700Q.h"
 
 #define RUN_MIC P0_20
 #define SPEAKER_1 P0_0
@@ -17,6 +18,8 @@
 
 #define COL1 P0_1
 #define COL2 P0_11
+
+#define FXOS_ADDR (0x1E << 1)
 
 const int addr = 0x1E << 1; // Uses 8-bit addresses
 
@@ -36,6 +39,18 @@ void system_off(){
 int main(void)
 {
     volatile int count = 0;
+    
+    // FXOS
+    I2C i2c(I2C_SDA, I2C_SCL);
+    FXOS8700QAccelerometer acc(i2c, FXOS_ADDR);
+    FXOS8700QMagnetometer mag(i2c, FXOS_ADDR);
+
+    // Check comms work
+    if(acc.whoAmI() != 0xC7)
+            while(1);
+
+    acc.disable();
+    mag.disable();
     
     // Config LED COL1
     nrf_gpio_cfg(COL1,

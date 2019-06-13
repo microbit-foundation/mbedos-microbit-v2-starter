@@ -67,6 +67,7 @@ PROJECT := nrf52-mbed-os-blinky
 # Objects and Paths
 
 OBJECTS += main.o
+OBJECTS += FXOS8700Q/FXOS8700Q.o
 OBJECTS += mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC/except.o
 OBJECTS += mbed-os/cmsis/TARGET_CORTEX_M/mbed_fault_handler.o
 OBJECTS += mbed-os/cmsis/TARGET_CORTEX_M/mbed_tz_context.o
@@ -896,6 +897,8 @@ OBJECTS += mbed-os/usb/device/utilities/events/TaskBase.o
 INCLUDE_PATHS += -I../
 INCLUDE_PATHS += -I../.
 INCLUDE_PATHS += -I..//usr/src/mbed-sdk
+INCLUDE_PATHS += -I../FXOS8700Q
+INCLUDE_PATHS += -I../FXOS8700Q/MotionSensor
 INCLUDE_PATHS += -I../mbed-os
 INCLUDE_PATHS += -I../mbed-os/cmsis
 INCLUDE_PATHS += -I../mbed-os/cmsis/TARGET_CORTEX_M
