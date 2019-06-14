@@ -84,6 +84,7 @@ mbed compile -m nrf52_dk -t GCC_ARM
 
 Build output can be found in: `./BUILD/NRF52_DK/GCC_ARM/mbedos-project.hex`
 
+If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
 ## Using Make
 
