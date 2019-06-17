@@ -47,7 +47,7 @@ The manual installation (in a Python 2 virtual environment) is the prefer method
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
 mbed config root .
-mbed target nrf52_dk
+mbed target nrf52_microbit
 mbed toolchain GCC_ARM
 mbed deploy
 ```
@@ -82,7 +82,7 @@ on the "Initialise" section:
 mbed compile -m nrf52_microbit -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT/GCC_ARM/mbedos-project.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT/GCC_ARM/mbedos-nrf52-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
