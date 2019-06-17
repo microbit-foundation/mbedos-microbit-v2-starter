@@ -1,4 +1,5 @@
 {
+    "artifact_name": "mbedos-nrf52-starter",
     "target_overrides": {
         "*": {
             "platform.stack-stats-enabled": true,

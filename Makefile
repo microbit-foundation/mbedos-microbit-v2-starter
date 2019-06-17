@@ -59,7 +59,7 @@ VPATH = ..
 ###############################################################################
 # Project settings
 
-PROJECT := nrf52-mbed-os-blinky
+PROJECT := mbedos-nrf52-starter
 
 
 # Project settings

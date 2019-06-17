@@ -82,7 +82,7 @@ on the "Initialise" section:
 mbed compile -m nrf52_dk -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_DK/GCC_ARM/mbedos-project.hex`
+Build output can be found in: `./BUILD/NRF52_DK/GCC_ARM/mbedos-nrf52-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
@@ -118,7 +118,7 @@ From the `mbedos-nrf52-starter` folder run:
 make
 ```
 
-Build output can be found in: `BUILD/nrf52-mbed-os-blinky-combined.hex`
+Build output can be found in: `./BUILD/mbedos-nrf52-starter-combined.hex`
 
 
 ## Visual Studio Code
