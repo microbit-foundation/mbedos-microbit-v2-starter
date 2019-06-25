@@ -128,7 +128,7 @@ some of those changes (and the header info) might need to be preserved in the
 new regenerated version.
 
 ```
-mbed-cli export -i GCC_ARM -m nrf52_dk --profile develop
+mbed-cli export -i GCC_ARM -m nrf52_microbit --profile develop
 ```
 
 
