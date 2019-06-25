@@ -120,6 +120,17 @@ make
 
 Build output can be found in: `./BUILD/mbedos-nrf52-starter-combined.hex`
 
+### Regenerate Makefile
+
+The Makefile can be regenerated using mbed-cli, however keep in mind that there
+has been changes applied (the file header contains more information), and
+some of those changes (and the header info) might need to be preserved in the
+new regenerated version.
+
+```
+mbed-cli export -i GCC_ARM -m nrf52_dk --profile develop
+```
+
 
 ## Visual Studio Code
 
