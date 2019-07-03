@@ -1,5 +1,6 @@
 {
     "artifact_name": "mbedos-nrf52-starter",
+    "macros": ["CONFIG_NFCT_PINS_AS_GPIOS"],
     "target_overrides": {
         "*": {
             "platform.stack-stats-enabled": true,
