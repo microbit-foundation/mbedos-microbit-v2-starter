@@ -138,6 +138,28 @@ At the moment we have the default config files from the Mbed online compiler
 project exporter. These are using `make` but could be updated to use `mbed-cli`.
 
 
+## Use NFC
+
+The Mbed board target created for the micro:bit configures the NFC pins as GPIO
+as they are exposed via the Edge Connector to be used as normal GPIOs.
+
+To change this and use them for NFC you can perform the following changes:
+- Mbed: Update the `mbed_app.json` file to include a remove macro entry in the micro:bit target.
+    ```
+    "NRF52_MICROBIT": {
+        "target.macros_remove": ["CONFIG_NFCT_PINS_AS_GPIOS"]
+    }
+    ```
+- Makefile: Remove the following lines from the makefile.
+    ```
+    C_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
+    ...
+    CXX_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
+    ...
+    ASM_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
+    ```
+
+
 ## Contributing
 
 TBD.
