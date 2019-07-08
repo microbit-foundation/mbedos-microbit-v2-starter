@@ -7,6 +7,7 @@
 - [Using Mbed](#using-mbed)
 - [Using Make](#using-make)
 - [Visual Studio Code](#visual-studio-code)
+- [Using NFC](#using-nfc)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -138,7 +139,7 @@ At the moment we have the default config files from the Mbed online compiler
 project exporter. These are using `make` but could be updated to use `mbed-cli`.
 
 
-## Use NFC
+## Using NFC
 
 The Mbed board target created for the micro:bit configures the NFC pins as GPIO
 as they are exposed via the Edge Connector to be used as normal GPIOs.
