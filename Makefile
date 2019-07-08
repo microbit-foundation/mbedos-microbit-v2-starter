@@ -66,7 +66,6 @@ PROJECT := mbedos-nrf52-starter
 ###############################################################################
 # Objects and Paths
 
-OBJECTS += ./main.o
 OBJECTS += ./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC/except.o
 OBJECTS += ./mbed-os/cmsis/TARGET_CORTEX_M/mbed_fault_handler.o
 OBJECTS += ./mbed-os/cmsis/TARGET_CORTEX_M/mbed_tz_context.o
@@ -892,6 +891,7 @@ OBJECTS += ./mbed-os/usb/device/utilities/LinkedListBase.o
 OBJECTS += ./mbed-os/usb/device/utilities/OperationListBase.o
 OBJECTS += ./mbed-os/usb/device/utilities/events/PolledQueue.o
 OBJECTS += ./mbed-os/usb/device/utilities/events/TaskBase.o
+OBJECTS += ./source/main.o
 
 
 INCLUDE_PATHS += -I../.
@@ -1244,7 +1244,7 @@ SREC_CAT = srec_cat
 
 C_FLAGS += -std=gnu99
 C_FLAGS += -include
-C_FLAGS += ./mbed_config.h
+C_FLAGS += mbed_config.h
 C_FLAGS += -DARM_MATH_CM4
 C_FLAGS += -DBOARD_PCA10040
 C_FLAGS += -DCMSIS_VECTAB_VIRTUAL
@@ -1273,7 +1273,7 @@ C_FLAGS += -DDEVICE_SYSTICK_CLK_OFF_DURING_SLEEP=1
 C_FLAGS += -DDEVICE_TRNG=1
 C_FLAGS += -DDEVICE_USTICKER=1
 C_FLAGS += -DFEATURE_BLE=1
-C_FLAGS += -DMBED_BUILD_TIMESTAMP=1562347702.448879
+C_FLAGS += -DMBED_BUILD_TIMESTAMP=1562582267.825092
 C_FLAGS += -DMBED_MPU_CUSTOM
 C_FLAGS += -DMBED_TICKLESS
 C_FLAGS += -DNRF52
@@ -1318,7 +1318,7 @@ C_FLAGS += -D__FPU_PRESENT=1
 C_FLAGS += -D__MBED_CMSIS_RTOS_CM
 C_FLAGS += -D__MBED__=1
 C_FLAGS += -include
-C_FLAGS += ./mbed_config.h
+C_FLAGS += mbed_config.h
 C_FLAGS += -std=gnu99
 C_FLAGS += -c
 C_FLAGS += -Wall
@@ -1352,7 +1352,7 @@ CXX_FLAGS += -std=gnu++98
 CXX_FLAGS += -fno-rtti
 CXX_FLAGS += -Wvla
 CXX_FLAGS += -include
-CXX_FLAGS += ./mbed_config.h
+CXX_FLAGS += mbed_config.h
 CXX_FLAGS += -DARM_MATH_CM4
 CXX_FLAGS += -DBOARD_PCA10040
 CXX_FLAGS += -DCMSIS_VECTAB_VIRTUAL
@@ -1381,7 +1381,7 @@ CXX_FLAGS += -DDEVICE_SYSTICK_CLK_OFF_DURING_SLEEP=1
 CXX_FLAGS += -DDEVICE_TRNG=1
 CXX_FLAGS += -DDEVICE_USTICKER=1
 CXX_FLAGS += -DFEATURE_BLE=1
-CXX_FLAGS += -DMBED_BUILD_TIMESTAMP=1562347702.448879
+CXX_FLAGS += -DMBED_BUILD_TIMESTAMP=1562582267.825092
 CXX_FLAGS += -DMBED_MPU_CUSTOM
 CXX_FLAGS += -DMBED_TICKLESS
 CXX_FLAGS += -DNRF52
@@ -1426,7 +1426,7 @@ CXX_FLAGS += -D__FPU_PRESENT=1
 CXX_FLAGS += -D__MBED_CMSIS_RTOS_CM
 CXX_FLAGS += -D__MBED__=1
 CXX_FLAGS += -include
-CXX_FLAGS += ./mbed_config.h
+CXX_FLAGS += mbed_config.h
 CXX_FLAGS += -std=gnu++98
 CXX_FLAGS += -fno-rtti
 CXX_FLAGS += -Wvla
