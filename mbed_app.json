@@ -11,7 +11,7 @@
         "NRF52_DK": {
             "target.lf_clock_src": "NRF_LF_SRC_RC"
         },
-        "NRF52_MICROBIT": {
+        "NRF52_MICROBIT_v1_41": {
         }
     }
 }

@@ -48,7 +48,7 @@ The manual installation (in a Python 2 virtual environment) is the prefer method
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
 mbed config root .
-mbed target nrf52_microbit
+mbed target nrf52_microbit_v1_41
 mbed toolchain GCC_ARM
 mbed deploy
 ```
@@ -80,10 +80,10 @@ Or if you want to manually add the flags previously configured in the project
 on the "Initialise" section:
 
 ```
-mbed compile -m nrf52_microbit -t GCC_ARM
+mbed compile -m nrf52_microbit_v1_41 -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT/GCC_ARM/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_41/GCC_ARM/mbedos-nrf52-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
@@ -129,7 +129,7 @@ some of those changes (and the header info) might need to be preserved in the
 new regenerated version.
 
 ```
-mbed-cli export -i GCC_ARM -m nrf52_microbit --profile develop
+mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_41 --profile develop
 ```
 
 
@@ -147,7 +147,7 @@ as they are exposed via the Edge Connector to be used as normal GPIOs.
 To change this and use them for NFC you can perform the following changes:
 - Mbed: Update the `mbed_app.json` file to include a remove macro entry in the micro:bit target.
     ```
-    "NRF52_MICROBIT": {
+    "NRF52_MICROBIT_v1_41": {
         "target.macros_remove": ["CONFIG_NFCT_PINS_AS_GPIOS"]
     }
     ```

@@ -1,5 +1,5 @@
 {
-    "NRF52_MICROBIT": {
+    "NRF52_MICROBIT_v1_41": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
         "device_name": "nRF52832_xxAA",
