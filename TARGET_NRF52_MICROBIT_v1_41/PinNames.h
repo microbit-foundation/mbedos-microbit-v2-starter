@@ -127,10 +127,24 @@ typedef enum {
     LED3    = p19,
     LED4    = p20,
 
-    BUTTON1 = p13,
-    BUTTON2 = p14,
-    BUTTON3 = p15,
-    BUTTON4 = p16,
+    // Buttons A and B
+    BUTTON1 = P0_14,
+    BUTTON2 = P0_15,
+    BUTTONA = BUTTON1,
+    BUTTONB = BUTTON2,
+
+    // LED matrix
+    ROW_1 = P0_21,
+    ROW_2 = P0_22,
+    ROW_3 = P0_23,
+    ROW_4 = P0_24,
+    ROW_5 = P0_13,
+    COL_1 = P0_1,
+    COL_2 = P0_11,
+    COL_3 = P0_30,
+    COL_4 = P0_12,
+    COL_5 = P0_7,
+    COL_6 = P0_31,
 
     RX_PIN_NUMBER  = p8,
     TX_PIN_NUMBER  = p6,

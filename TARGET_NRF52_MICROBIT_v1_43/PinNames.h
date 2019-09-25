@@ -156,12 +156,26 @@ typedef enum {
     P1_14 = p46,
     P1_15 = p47,
 
-    // RING 2
-    LED1 = P0_4,
+    // LED in the nRF52833 DK board
+    LED1 = P0_13,
 
     // Buttons A and B
     BUTTON1 = P0_14,
     BUTTON2 = P0_23,
+    BUTTONA = BUTTON1,
+    BUTTONB = BUTTON2,
+
+    // LED matrix
+    ROW_1 = P0_21,
+    ROW_2 = P0_22,
+    ROW_3 = P0_15,
+    ROW_4 = P0_24,
+    ROW_5 = P0_19,
+    COL_1 = P0_28,
+    COL_2 = P0_11,
+    COL_3 = P0_31,
+    COL_4 = P1_5,
+    COL_5 = P0_30,
 
     RX_PIN_NUMBER  = p8,
     TX_PIN_NUMBER  = p6,
