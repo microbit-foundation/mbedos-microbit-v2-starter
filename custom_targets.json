@@ -50,8 +50,7 @@
         ],
         "device_has_remove": ["ITM"],
         "overrides": {
-            "lf_clock_src": "NRF_LF_SRC_RC",
-            "target.restrict_size": "0x40000"
+            "lf_clock_src": "NRF_LF_SRC_RC"
         }
     }
 }
