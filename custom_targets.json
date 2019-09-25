@@ -46,8 +46,7 @@
             "NRF52_PAN_62",
             "NRF52_PAN_63",
             "NRF52_PAN_64",
-            "CONFIG_NFCT_PINS_AS_GPIOS",
-            "MBED_RAM_SIZE=0x10000"
+            "CONFIG_NFCT_PINS_AS_GPIOS"
         ],
         "device_has_remove": ["ITM"],
         "overrides": {
