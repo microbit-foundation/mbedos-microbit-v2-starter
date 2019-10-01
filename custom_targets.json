@@ -1,8 +1,35 @@
 {
-    "NRF52_MICROBIT": {
+    "NRF52_MICROBIT_v1_41": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
         "device_name": "nRF52832_xxAA",
+        "macros_add": [
+            "WSF_MAX_HANDLERS=10",
+            "NRF52_PAN_12",
+            "NRF52_PAN_15",
+            "NRF52_PAN_20",
+            "NRF52_PAN_30",
+            "NRF52_PAN_31",
+            "NRF52_PAN_36",
+            "NRF52_PAN_51",
+            "NRF52_PAN_53",
+            "NRF52_PAN_54",
+            "NRF52_PAN_55",
+            "NRF52_PAN_58",
+            "NRF52_PAN_62",
+            "NRF52_PAN_63",
+            "NRF52_PAN_64",
+            "CONFIG_NFCT_PINS_AS_GPIOS"
+        ],
+        "device_has_remove": ["ITM"],
+        "overrides": {
+            "lf_clock_src": "NRF_LF_SRC_RC"
+        }
+    },
+    "NRF52_MICROBIT_v1_43": {
+        "inherits": ["MCU_NRF52840"],
+        "release_versions": ["5"],
+        "device_name": "nRF52840_xxAA",
         "macros_add": [
             "WSF_MAX_HANDLERS=10",
             "NRF52_PAN_12",
