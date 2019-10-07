@@ -1,37 +1,47 @@
 #include "mbed.h"
+#include "nrf_delay.h"
 
-DigitalOut rows[5] = {
-    DigitalOut(ROW_1, 0),
-    DigitalOut(ROW_2, 0),
-    DigitalOut(ROW_3, 0),
-    DigitalOut(ROW_4, 0),
-    DigitalOut(ROW_5, 0)
-};
-DigitalOut cols[5] = {
-    DigitalOut(COL_1, 1),
-    DigitalOut(COL_2, 1),
-    DigitalOut(COL_3, 1),
-    DigitalOut(COL_4, 1),
-    DigitalOut(COL_5, 1)
-};
+#define SPEAKER P0_0
+#define AUDIO_PIN P0_2
+#define BUTTONA P0_14
 
-int main(void) {
-    //DigitalOut led(LED1, 0);
+PwmOut speaker(SPEAKER);
 
+void audio_sweep() {
+    speaker.write(0.5f);      // 0.5 width
+
+    for(int i = 10; i < 2000; i += 5) {
+            float f = 1.0f/(float)i;
+            speaker.period(f);
+            nrf_delay_ms(31); // From MakeCode: music.beat(BeatFraction.Sixteenth)
+    }
+    
+    speaker.write(0.0f);      // 0 width
+
+}
+
+int main() {
+
+    speaker.period(4.0f);      // 4 second period
+    speaker.write(0.0f);      // 0 width
+    
+   // Button A to start
+   nrf_gpio_cfg( BUTTONA,
+           NRF_GPIO_PIN_DIR_INPUT,
+           NRF_GPIO_PIN_INPUT_CONNECT,
+           NRF_GPIO_PIN_NOPULL,
+           NRF_GPIO_PIN_H0H1,
+           NRF_GPIO_PIN_NOSENSE);
+
+
+    volatile int count = 0;
     while (true) {
-        for (int i = 0; i < 5; i++) {
-            rows[i] = 1;
-            int prev_i = i - 1;
-            if (prev_i < 0) prev_i = 4;
-            rows[prev_i] = 0;
-            for (int j = 0; j < 5; j++) {
-                cols[j] = 0;
-                int prev_j = j - 1;
-                if (prev_j < 0) prev_j = 4;
-                cols[prev_j] = 1;
-                wait(0.25);
-                //led = !led;
-            }
+
+        if(nrf_gpio_pin_read(BUTTONA) == 0) {
+            audio_sweep();
         }
+
+        nrf_delay_ms(300);
+
     }
 }
