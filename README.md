@@ -7,6 +7,7 @@
 - [Using Mbed](#using-mbed)
 - [Using Make](#using-make)
 - [Visual Studio Code](#visual-studio-code)
+- [Using NFC](#using-nfc)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -41,16 +42,33 @@ https://os.mbed.com/docs/mbed-os/v5.12/tools/developing-mbed-cli.html
 
 The manual installation (in a Python 2 virtual environment) is the prefer method.
 
+### Multiple targets
+
+As there are multiple revisions of the nRF52 board we are using multiple mbed
+targets.
+
+- `nrf52_microbit_v1_41`: For the micro:bit v1.41RC2, v1.41RC4, and v1.41RC5
+- `nrf52_microbit_v1_43`: For the micro:bit v1.43.4
+
+The version of the board can be seen on the silkscreen at the back, near the
+right side of the edge connector.
+
 ### Initialise
+
+Note that for the `mbed target ...` line you should select the right target
+for your board.
 
 ```
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
+mbed config root .
+mbed target nrf52_microbit_v1_43
+mbed toolchain GCC_ARM
 mbed deploy
 ```
 
-If it fails to install some of the Python dependencies you can try again
-manually:
+If it fails to install some of the Python dependencies on the last command (
+`mbed deploy`) you can try again manually:
 
 ```
 pip install -r mbed-os/requirements.txt
@@ -63,19 +81,40 @@ Ideally you should be using virtual environments, alternatively you can use the
 pip install --user -r mbed-os/requirements.txt
 ```
 
-**Warning:** Do not use `mbed new .` as it will update MbedOS to the latest
+**Warning:** Do not use `mbed new .` as it can update MbedOS to the latest
 version, and this is often unwanted.
 
 ### Build
 
 ```
-mbed compile -m nrf52_dk -t GCC_ARM
+mbed compile
 ```
 
-Build output can be found in: `./BUILD/NRF52_DK/GCC_ARM/mbedos-project.hex`
+Or if you want to manually add the flags previously configured in the project
+on the "Initialise" section:
+
+```
+mbed compile -m nrf52_microbit_v1_43 -t GCC_ARM
+```
+
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-nrf52-starter.hex`
+
+If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
 
-## Using Make
+## Using Make (back up option only)
+
+The use of the Makefile is discouraged, and it is here only as a back up
+mechanism to compile the Mbed project.
+As the MakeFile is created based on the mbed project and some manual patches
+have to be applied, it is likely this method will fall behind compared the mbed
+method.
+
+### Single target
+
+Only the latest target is supported in the Makefile.
+
+At the time of writing this would be v1.43.4 boards.
 
 ### Initialise
 
@@ -89,7 +128,7 @@ Then open the `mbed-os.lib` file with a text editor, it should have something
 like this:
 
 ```
-https://github.com/ARMmbed/mbed-os/#0f959dbe4749c20416236e4fe1dac5692cbe18ab
+https://github.com/ARMmbed/mbed-os/#1bf6b20df9d3cd5f29f001ffc6f0d0fcbbb96118
 ```
 
 The sequence after the `#` is the git commit needed of mbed-os, so:
@@ -107,13 +146,46 @@ From the `mbedos-nrf52-starter` folder run:
 make
 ```
 
-Build output can be found in: `BUILD/nrf52-mbed-os-blinky-combined.hex`
+Build output can be found in: `./BUILD/mbedos-nrf52-starter.hex`
+
+### Regenerate Makefile
+
+The Makefile can be regenerated using mbed-cli, however keep in mind that there
+has been changes applied (the file header contains more information), and
+some of those changes (and the header info) might need to be preserved in the
+new regenerated version.
+
+```
+mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_43 --profile develop
+```
 
 
 ## Visual Studio Code
 
 At the moment we have the default config files from the Mbed online compiler
 project exporter. These are using `make` but could be updated to use `mbed-cli`.
+
+
+## Using NFC
+
+The Mbed board target created for the micro:bit configures the NFC pins as GPIO
+as they are exposed via the Edge Connector to be used as normal GPIOs.
+
+To change this and use them for NFC you can perform the following changes:
+- Mbed: Update the `mbed_app.json` file to include a remove macro entry in the micro:bit target.
+    ```
+    "NRF52_MICROBIT_v1_43": {
+        "target.macros_remove": ["CONFIG_NFCT_PINS_AS_GPIOS"]
+    }
+    ```
+- Makefile: Remove the following lines from the makefile.
+    ```
+    C_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
+    ...
+    CXX_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
+    ...
+    ASM_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
+    ```
 
 
 ## Contributing
