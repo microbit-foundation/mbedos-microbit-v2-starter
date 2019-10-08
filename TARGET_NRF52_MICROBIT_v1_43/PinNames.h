@@ -177,8 +177,8 @@ typedef enum {
     COL_4 = P1_5,
     COL_5 = P0_30,
 
-    RX_PIN_NUMBER  = p8,
-    TX_PIN_NUMBER  = p6,
+    RX_PIN_NUMBER  = P0_6,
+    TX_PIN_NUMBER  = P1_8,
     CTS_PIN_NUMBER = p7,
     RTS_PIN_NUMBER = p5,
 
@@ -190,49 +190,16 @@ typedef enum {
     STDIO_UART_CTS = CTS_PIN_NUMBER,
     STDIO_UART_RTS = RTS_PIN_NUMBER,
 
-    SPI_PSELMOSI0 = P1_13,
-    SPI_PSELMISO0 = P1_14,
-    SPI_PSELSS0   = P1_12,
-    SPI_PSELSCK0  = P1_15,
+    SPI_PSELMOSI0 = P0_13,
+    SPI_PSELMISO0 = P0_1,
+    SPI_PSELSS0   = P1_2,
+    SPI_PSELSCK0  = P0_17,
 
-    SPI_PSELMOSI1 = P1_2,
-    SPI_PSELMISO1 = P1_3,
-    SPI_PSELSS1   = P1_1,
-    SPI_PSELSCK1  = P1_4,
+    I2C_SDA0 = P0_16,
+    I2C_SCL0 = P0_8,
 
-    SPIS_PSELMOSI = P1_2,
-    SPIS_PSELMISO = P1_3,
-    SPIS_PSELSS   = P1_1,
-    SPIS_PSELSCK  = P1_4,
-
-    I2C_SDA0 = p26,
-    I2C_SCL0 = p27,
-
-    D0 = P1_1,
-    D1 = P1_2,
-    D2 = P1_3,
-    D3 = P1_4,
-    D4 = P1_5,
-    D5 = P1_6,
-    D6 = P1_7,
-    D7 = P1_8,
-
-    D8  = P1_10,
-    D9  = P1_11,
-    D10 = P1_12,
-    D11 = P1_13,
-    D12 = P1_14,
-    D13 = P1_15,
-
-    D14 = p26,
-    D15 = p27,
-
-    A0 = p3,
-    A1 = p4,
-    A2 = p28,
-    A3 = p29,
-    A4 = p30,
-    A5 = p31,
+    I2C_SDA1 = P1_0,
+    I2C_SCL1 = P0_26,
 
     /**** QSPI pins ****/
     QSPI1_IO0 = P0_20,
