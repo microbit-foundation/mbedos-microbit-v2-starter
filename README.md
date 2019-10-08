@@ -53,6 +53,20 @@ targets.
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
 
+### Mbed OS Version
+
+We are currently locked to
+[v5.12.4](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.12.4) as
+this is the last version to support Soft Device, which has been dropped in
+[v5.13+](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.13.0):
+
+> Default to Cordio BLE stack for NRF52* targets
+> [10709](https://github.com/ARMmbed/mbed-os/pull/10709)
+> 
+> Starting with mbed-os 5.13 and the introduction of Nordic SDK V15, Nordic
+> SoftDevice Bluetooth stack is not supported. Bluetooth remains supported with
+> the help of Arm's Cordio stack.
+
 ### Initialise
 
 Note that for the `mbed target ...` line you should select the right target
@@ -128,7 +142,7 @@ Then open the `mbed-os.lib` file with a text editor, it should have something
 like this:
 
 ```
-https://github.com/ARMmbed/mbed-os/#1bf6b20df9d3cd5f29f001ffc6f0d0fcbbb96118
+https://github.com/ARMmbed/mbed-os/#73f096399b4cda1f780b140c87afad9446047432
 ```
 
 The sequence after the `#` is the git commit needed of mbed-os, so:
@@ -146,7 +160,7 @@ From the `mbedos-nrf52-starter` folder run:
 make
 ```
 
-Build output can be found in: `./BUILD/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/mbedos-nrf52-starter-combined.hex`
 
 ### Regenerate Makefile
 

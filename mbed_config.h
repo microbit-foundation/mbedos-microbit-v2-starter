@@ -29,8 +29,6 @@
 #define __MBED_CONFIG_DATA__
 
 // Configuration parameters
-#define ATT_NUM_SIMUL_NTF                                                     1                                                                                                // set by library:cordio
-#define ATT_NUM_SIMUL_WRITE_CMD                                               1                                                                                                // set by library:cordio
 #define BLE_FEATURE_EXTENDED_ADVERTISING                                      1                                                                                                // set by library:ble
 #define BLE_FEATURE_GATT_CLIENT                                               1                                                                                                // set by library:ble
 #define BLE_FEATURE_GATT_SERVER                                               1                                                                                                // set by library:ble
@@ -45,15 +43,6 @@
 #define BLE_ROLE_CENTRAL                                                      1                                                                                                // set by library:ble
 #define BLE_ROLE_OBSERVER                                                     1                                                                                                // set by library:ble
 #define BLE_ROLE_PERIPHERAL                                                   1                                                                                                // set by library:ble
-#define CHCI_TR_UART                                                          0                                                                                                // set by library:cordio-ll
-#define CORDIO_ZERO_COPY_HCI                                                  1                                                                                                // set by library:cordio-nordic-ll
-#define DM_CONN_MAX                                                           3                                                                                                // set by library:cordio
-#define DM_NUM_ADV_SETS                                                       3                                                                                                // set by library:cordio
-#define DM_NUM_PHYS                                                           3                                                                                                // set by library:cordio
-#define DM_SYNC_MAX                                                           1                                                                                                // set by library:cordio
-#define L2C_COC_CHAN_MAX                                                      1                                                                                                // set by library:cordio
-#define L2C_COC_REG_MAX                                                       1                                                                                                // set by library:cordio
-#define LHCI_ENABLE_VS                                                        0                                                                                                // set by library:cordio-ll
 #define MBED_CONF_ATMEL_RF_ASSUME_SPACED_SPI                                  0                                                                                                // set by library:atmel-rf
 #define MBED_CONF_ATMEL_RF_FULL_SPI_SPEED                                     7500000                                                                                          // set by library:atmel-rf
 #define MBED_CONF_ATMEL_RF_FULL_SPI_SPEED_BYTE_SPACING                        250                                                                                              // set by library:atmel-rf
@@ -65,24 +54,6 @@
 #define MBED_CONF_CELLULAR_DEBUG_AT                                           0                                                                                                // set by library:cellular
 #define MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY                             0                                                                                                // set by library:cellular
 #define MBED_CONF_CELLULAR_USE_APN_LOOKUP                                     1                                                                                                // set by library:cellular
-#define MBED_CONF_CORDIO_DESIRED_ATT_MTU                                      23                                                                                               // set by library:cordio
-#define MBED_CONF_CORDIO_LL_DEFAULT_EXTENDED_ADVERTISING_FRAGMENTATION_SIZE   64                                                                                               // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_EXTENDED_ADVERTISING_SIZE                         251                                                                                              // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_MAX_ACL_SIZE                                      256                                                                                              // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_MAX_ADVERTISING_REPORTS                           4                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_MAX_ADVERTISING_SETS                              3                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_MAX_SCAN_REQUEST_EVENTS                           4                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_NRF52840_CRYPTOCELL310_ACCELERATION               1                                                                                                // set by library:cordio-ll-nrf52840
-#define MBED_CONF_CORDIO_LL_NRF52840_EXTENDED_ADVERTISING_SIZE                512                                                                                              // set by library:cordio-ll-nrf52840
-#define MBED_CONF_CORDIO_LL_NRF52840_MAX_ACL_SIZE                             256                                                                                              // set by library:cordio-ll-nrf52840
-#define MBED_CONF_CORDIO_LL_NRF52840_PHY_CODED_SUPPORT                        1                                                                                                // set by library:cordio-ll-nrf52840
-#define MBED_CONF_CORDIO_LL_NRF52840_TX_BUFFERS                               4                                                                                                // set by library:cordio-ll-nrf52840
-#define MBED_CONF_CORDIO_LL_PHY_2M_SUPPORT                                    1                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_PHY_CODED_SUPPORT                                 0                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_RX_BUFFERS                                        4                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_LL_TX_BUFFERS                                        4                                                                                                // set by library:cordio-ll
-#define MBED_CONF_CORDIO_MAX_PREPARED_WRITES                                  4                                                                                                // set by library:cordio
-#define MBED_CONF_CORDIO_RX_ACL_BUFFER_SIZE                                   70                                                                                               // set by library:cordio
 #define MBED_CONF_DRIVERS_UART_SERIAL_RXBUF_SIZE                              256                                                                                              // set by library:drivers
 #define MBED_CONF_DRIVERS_UART_SERIAL_TXBUF_SIZE                              256                                                                                              // set by library:drivers
 #define MBED_CONF_ESP8266_DEBUG                                               0                                                                                                // set by library:esp8266
@@ -136,7 +107,6 @@
 #define MBED_CONF_LWIP_PPP_THREAD_STACKSIZE                                   768                                                                                              // set by library:lwip
 #define MBED_CONF_LWIP_SOCKET_MAX                                             4                                                                                                // set by library:lwip
 #define MBED_CONF_LWIP_TCPIP_THREAD_STACKSIZE                                 1200                                                                                             // set by library:lwip
-#define MBED_CONF_LWIP_TCP_CLOSE_TIMEOUT                                      1000                                                                                             // set by library:lwip
 #define MBED_CONF_LWIP_TCP_ENABLED                                            1                                                                                                // set by library:lwip
 #define MBED_CONF_LWIP_TCP_MAXRTX                                             6                                                                                                // set by library:lwip
 #define MBED_CONF_LWIP_TCP_SERVER_MAX                                         4                                                                                                // set by library:lwip
@@ -186,6 +156,7 @@
 #define MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_DISPATCH_FROM_APPLICATION          0                                                                                                // set by library:nanostack-hal
 #define MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_THREAD_STACK_SIZE                  6144                                                                                             // set by library:nanostack-hal
 #define MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_USE_MBED_EVENTS                    0                                                                                                // set by library:nanostack-hal
+#define MBED_CONF_NANOSTACK_HAL_NVM_CFSTORE                                   0                                                                                                // set by library:nanostack-hal
 #define MBED_CONF_NORDIC_NRF_LF_CLOCK_CALIB_MODE_CONFIG                       0                                                                                                // set by target:MCU_NRF52840
 #define MBED_CONF_NORDIC_NRF_LF_CLOCK_CALIB_TIMER_INTERVAL                    16                                                                                               // set by target:MCU_NRF52840
 #define MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC                                     NRF_LF_SRC_RC                                                                                    // set by target:NRF52_MICROBIT_v1_43
@@ -195,8 +166,8 @@
 #define MBED_CONF_NSAPI_DEFAULT_STACK                                         LWIP                                                                                             // set by library:nsapi
 #define MBED_CONF_NSAPI_DEFAULT_WIFI_SECURITY                                 NONE                                                                                             // set by library:nsapi
 #define MBED_CONF_NSAPI_DNS_CACHE_SIZE                                        3                                                                                                // set by library:nsapi
-#define MBED_CONF_NSAPI_DNS_RESPONSE_WAIT_TIME                                10000                                                                                            // set by library:nsapi
-#define MBED_CONF_NSAPI_DNS_RETRIES                                           2                                                                                                // set by library:nsapi
+#define MBED_CONF_NSAPI_DNS_RESPONSE_WAIT_TIME                                5000                                                                                             // set by library:nsapi
+#define MBED_CONF_NSAPI_DNS_RETRIES                                           0                                                                                                // set by library:nsapi
 #define MBED_CONF_NSAPI_DNS_TOTAL_ATTEMPTS                                    3                                                                                                // set by library:nsapi
 #define MBED_CONF_NSAPI_PRESENT                                               1                                                                                                // set by library:nsapi
 #define MBED_CONF_NSAPI_SOCKET_STATS_ENABLED                                  0                                                                                                // set by library:nsapi
@@ -243,8 +214,6 @@
 #define MBED_CONF_QUECTEL_M26_PROVIDE_DEFAULT                                 0                                                                                                // set by library:QUECTEL_M26
 #define MBED_CONF_QUECTEL_UG96_BAUDRATE                                       115200                                                                                           // set by library:QUECTEL_UG96
 #define MBED_CONF_QUECTEL_UG96_PROVIDE_DEFAULT                                0                                                                                                // set by library:QUECTEL_UG96
-#define MBED_CONF_RM1000_AT_BAUDRATE                                          230400                                                                                           // set by library:RM1000_AT
-#define MBED_CONF_RM1000_AT_PROVIDE_DEFAULT                                   0                                                                                                // set by library:RM1000_AT
 #define MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE                                 512                                                                                              // set by library:rtos
 #define MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE_DEBUG_EXTRA                     0                                                                                                // set by library:rtos
 #define MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE_TICKLESS_EXTRA                  256                                                                                              // set by library:rtos
@@ -282,15 +251,11 @@
 #define MBED_CONF_STORAGE_TDB_INTERNAL_INTERNAL_BASE_ADDRESS                  0                                                                                                // set by library:storage_tdb_internal
 #define MBED_CONF_STORAGE_TDB_INTERNAL_INTERNAL_SIZE                          0                                                                                                // set by library:storage_tdb_internal
 #define MBED_CONF_TARGET_BOOT_STACK_SIZE                                      0x800                                                                                            // set by library:rtos[MCU_NRF52840]
-#define MBED_CONF_TARGET_CONSOLE_UART                                         1                                                                                                // set by target:Target
 #define MBED_CONF_TARGET_DEEP_SLEEP_LATENCY                                   0                                                                                                // set by target:Target
-#define MBED_CONF_TARGET_INIT_US_TICKER_AT_BOOT                               0                                                                                                // set by target:Target
 #define MBED_CONF_TARGET_MPU_ROM_END                                          0x1fffffff                                                                                       // set by target:MCU_NRF52840
 #define MBED_CONF_TARGET_TICKLESS_FROM_US_TICKER                              0                                                                                                // set by target:Target
 #define MBED_CONF_TELIT_HE910_BAUDRATE                                        115200                                                                                           // set by library:TELIT_HE910
 #define MBED_CONF_TELIT_HE910_PROVIDE_DEFAULT                                 0                                                                                                // set by library:TELIT_HE910
-#define MBED_CONF_TELIT_ME910_BAUDRATE                                        115200                                                                                           // set by library:TELIT_ME910
-#define MBED_CONF_TELIT_ME910_PROVIDE_DEFAULT                                 0                                                                                                // set by library:TELIT_ME910
 #define MBED_CONF_UBLOX_AT_BAUDRATE                                           115200                                                                                           // set by library:UBLOX_AT
 #define MBED_CONF_UBLOX_AT_PROVIDE_DEFAULT                                    0                                                                                                // set by library:UBLOX_AT
 #define MBED_CONF_UBLOX_N2XX_BAUDRATE                                         9600                                                                                             // set by library:UBLOX_N2XX
@@ -310,29 +275,54 @@
 #define MBED_THREAD_STATS_ENABLED                                             1                                                                                                // set by application[*]
 #define MEM_ALLOC                                                             malloc                                                                                           // set by library:mbed-trace
 #define MEM_FREE                                                              free                                                                                             // set by library:mbed-trace
+#define NRF_SDH_BLE_CENTRAL_LINK_COUNT                                        3                                                                                                // set by library:nordic-ble
+#define NRF_SDH_BLE_GATTS_ATTR_TAB_SIZE                                       0x600                                                                                            // set by library:nordic-ble
+#define NRF_SDH_BLE_PERIPHERAL_LINK_COUNT                                     1                                                                                                // set by library:nordic-ble
+#define NRF_SDH_BLE_SERVICE_CHANGED                                           1                                                                                                // set by library:nordic-ble
+#define NRF_SDH_BLE_TOTAL_CHARACTERISTICS                                     20                                                                                               // set by library:nordic-ble
+#define NRF_SDH_BLE_TOTAL_DESCRIPTORS                                         8                                                                                                // set by library:nordic-ble
+#define NRF_SDH_BLE_TOTAL_LINK_COUNT                                          (NRF_SDH_BLE_CENTRAL_LINK_COUNT + NRF_SDH_BLE_PERIPHERAL_LINK_COUNT)                             // set by library:nordic-ble
+#define NRF_SDH_BLE_VS_UUID_COUNT                                             4                                                                                                // set by library:nordic-ble
 #define NSAPI_PPP_AVAILABLE                                                   0                                                                                                // set by library:lwip
 #define NSAPI_PPP_IPV4_AVAILABLE                                              1                                                                                                // set by library:lwip
 #define NSAPI_PPP_IPV6_AVAILABLE                                              0                                                                                                // set by library:lwip
 #define NVSTORE_ENABLED                                                       1                                                                                                // set by library:nvstore
 #define NVSTORE_MAX_KEYS                                                      16                                                                                               // set by library:nvstore
-#define SEC_CCM_CFG                                                           1                                                                                                // set by library:cordio
-#define SMP_DB_MAX_DEVICES                                                    3                                                                                                // set by library:cordio
 // Macros
-#define BB_CLK_RATE_HZ                                                        1000000                                                                                          // defined by library:cordio-nordic-ll
-#define INIT_BROADCASTER                                                                                                                                                       // defined by library:cordio-nordic-ll
-#define INIT_CENTRAL                                                                                                                                                           // defined by library:cordio-nordic-ll
-#define INIT_ENCRYPTED                                                                                                                                                         // defined by library:cordio-nordic-ll
-#define INIT_OBSERVER                                                                                                                                                          // defined by library:cordio-nordic-ll
-#define INIT_PERIPHERAL                                                                                                                                                        // defined by library:cordio-nordic-ll
-#define LHCI_ENABLE_VS                                                        0                                                                                                // defined by library:cordio-nordic-ll
-#define LL_MAX_PER_SCAN                                                       3                                                                                                // defined by library:cordio-nordic-ll
+#define BLE_ADV_BLE_OBSERVER_PRIO                                             1                                                                                                // defined by library:softdevice
+#define BLE_CONN_PARAMS_BLE_OBSERVER_PRIO                                     1                                                                                                // defined by library:softdevice
+#define BLE_CONN_STATE_BLE_OBSERVER_PRIO                                      0                                                                                                // defined by library:softdevice
+#define BLE_STACK_SUPPORT_REQD                                                                                                                                                 // defined by library:softdevice
+#define FDS_BACKEND                                                           2                                                                                                // defined by library:softdevice
 #define MBEDTLS_CIPHER_MODE_CTR                                                                                                                                                // defined by library:SecureStore
 #define MBEDTLS_CMAC_C                                                                                                                                                         // defined by library:SecureStore
-#define MBEDTLS_PSA_HAS_ITS_IO                                                                                                                                                 // defined by library:mbed-crypto
+#define NRF_BLE_GATT_BLE_OBSERVER_PRIO                                        1                                                                                                // defined by library:softdevice
+#define NRF_SDH_BLE_ENABLED                                                   1                                                                                                // defined by library:softdevice
+#define NRF_SDH_BLE_GAP_EVENT_LENGTH                                          3                                                                                                // defined by library:softdevice
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE                                         23                                                                                               // defined by library:softdevice
+#define NRF_SDH_BLE_OBSERVER_PRIO_LEVELS                                      4                                                                                                // defined by library:softdevice
+#define NRF_SDH_BLE_STACK_OBSERVER_PRIO                                       0                                                                                                // defined by library:softdevice
+#define NRF_SDH_CLOCK_LF_XTAL_ACCURACY                                        7                                                                                                // defined by library:softdevice
+#define NRF_SDH_DISPATCH_MODEL                                                2                                                                                                // defined by library:softdevice
+#define NRF_SDH_ENABLED                                                       1                                                                                                // defined by library:softdevice
+#define NRF_SDH_REQ_OBSERVER_PRIO_LEVELS                                      2                                                                                                // defined by library:softdevice
+#define NRF_SDH_SOC_ENABLED                                                   1                                                                                                // defined by library:softdevice
+#define NRF_SDH_SOC_OBSERVER_PRIO_LEVELS                                      2                                                                                                // defined by library:softdevice
+#define NRF_SDH_SOC_STACK_OBSERVER_PRIO                                       0                                                                                                // defined by library:softdevice
+#define NRF_SDH_STACK_OBSERVER_PRIO_LEVELS                                    2                                                                                                // defined by library:softdevice
+#define NRF_SDH_STATE_OBSERVER_PRIO_LEVELS                                    2                                                                                                // defined by library:softdevice
+#define NRF_SD_BLE_API_VERSION                                                5                                                                                                // defined by library:softdevice
 #define NS_USE_EXTERNAL_MBED_TLS                                                                                                                                               // defined by library:nanostack
+#define PEER_MANAGER_ENABLED                                                  1                                                                                                // defined by library:softdevice
+#define S140                                                                                                                                                                   // defined by library:softdevice
+#define SOFTDEVICE_PRESENT                                                    1                                                                                                // defined by library:softdevice
 #define SWI_DISABLE0                                                                                                                                                           // defined by library:nordic
+#define SWI_DISABLE1                                                                                                                                                           // defined by library:softdevice
+#define SWI_DISABLE2                                                                                                                                                           // defined by library:softdevice
+#define SWI_DISABLE3                                                                                                                                                           // defined by library:softdevice
+#define SWI_DISABLE4                                                                                                                                                           // defined by library:softdevice
+#define SWI_DISABLE5                                                                                                                                                           // defined by library:softdevice
 #define UNITY_INCLUDE_CONFIG_H                                                                                                                                                 // defined by library:utest
-#define WSF_MS_PER_TICK                                                       1                                                                                                // defined by library:cordio
 #define _RTE_                                                                                                                                                                  // defined by library:rtos
 
 #endif
