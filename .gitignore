@@ -4,6 +4,7 @@
 .build
 .mbed
 projectfiles
+BUILD/
 
 # yotta build folders
 yotta_targets
@@ -15,7 +16,8 @@ __pycache__/
 
 # The Mbed OS source folder is managed by mbed-cli
 mbed-os/
-
+FXOS8700Q/
+LSM303AGR/
 
 ############
 # OS files #
