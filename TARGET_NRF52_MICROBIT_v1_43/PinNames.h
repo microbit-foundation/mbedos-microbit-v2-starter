@@ -182,6 +182,22 @@ typedef enum {
     CTS_PIN_NUMBER = p7,
     RTS_PIN_NUMBER = p5,
 
+    // RING
+    RING0 = P0_2,
+    RING1 = P0_3,
+    RING2 = P0_4,
+
+    // GPIO
+    GPIO1 = P0_10,
+    GPIO2 = P0_9,
+    GPIO3 = P1_2,
+    GPIO4 = P0_12,
+
+    // Audio
+    SPEAKER = P0_0,
+    MIC = P0_5,
+    RUN_MIC = P0_20,
+
     // mBed interface Pins
     USBTX = TX_PIN_NUMBER,
     USBRX = RX_PIN_NUMBER,
