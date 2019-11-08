@@ -177,11 +177,6 @@ typedef enum {
     COL_4 = P1_5,
     COL_5 = P0_30,
 
-    RX_PIN_NUMBER  = P1_8,
-    TX_PIN_NUMBER  = P0_6,
-    CTS_PIN_NUMBER = p7,
-    RTS_PIN_NUMBER = p5,
-
     // RING
     RING0 = P0_2,
     RING1 = P0_3,
@@ -197,6 +192,12 @@ typedef enum {
     SPEAKER = P0_0,
     MIC = P0_5,
     RUN_MIC = P0_20,
+
+    // UART
+    RX_PIN_NUMBER  = P1_8,
+    TX_PIN_NUMBER  = P0_6,
+    CTS_PIN_NUMBER = p7,
+    RTS_PIN_NUMBER = p5,
 
     // mBed interface Pins
     USBTX = TX_PIN_NUMBER,

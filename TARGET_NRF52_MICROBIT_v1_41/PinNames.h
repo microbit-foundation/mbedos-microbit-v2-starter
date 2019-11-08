@@ -146,6 +146,23 @@ typedef enum {
     COL_5 = P0_7,
     COL_6 = P0_31,
 
+    // RING
+    RING0 = P0_2,
+    RING1 = P0_3,
+    RING2 = P0_4,
+
+    // GPIO
+    GPIO1 = P0_10,
+    GPIO2 = P0_9,
+    GPIO3 = P1_2,
+    GPIO4 = P0_12,
+
+    // Audio
+    SPEAKER = P0_0,
+    MIC = P0_5,
+    RUN_MIC = P0_20,
+
+    // UART
     RX_PIN_NUMBER  = P0_8,
     TX_PIN_NUMBER  = P0_16,
     CTS_PIN_NUMBER = p7,
