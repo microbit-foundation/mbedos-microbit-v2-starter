@@ -25,13 +25,19 @@
   #define MBED_APP_SIZE 0x80000
 #endif
 
-#if !defined(MBED_RAM_START)
-  #define MBED_RAM_START 0x20000000
-  #define MBED_RAM_SIZE 0x20000
-#endif
-
 #if !defined(MBED_BOOT_STACK_SIZE)
     #define MBED_BOOT_STACK_SIZE 0x800
+#endif
+
+/* If softdevice is present, set aside space for it */
+#if !defined(MBED_RAM_START)
+  #if defined(SOFTDEVICE_PRESENT)
+    #define MBED_RAM_START  0x20003188
+    #define MBED_RAM_SIZE   0x3CE78
+  #else
+    #define MBED_RAM_START  0x20000000
+    #define MBED_RAM_SIZE   0x20000
+  #endif
 #endif
 
 #define MBED_RAM0_START MBED_RAM_START
