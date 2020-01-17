@@ -49,6 +49,8 @@ targets.
 
 - `nrf52_microbit_v1_41`: For the micro:bit v1.41RC2, v1.41RC4, and v1.41RC5
 - `nrf52_microbit_v1_43`: For the micro:bit v1.43.4
+- `nrf52_microbit_v1_44`: For the micro:bit v1.44.4
+- `nrf52833_dk`: For the Nordic nRF52833 DK board
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
@@ -76,7 +78,7 @@ for your board.
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
 mbed config root .
-mbed target nrf52_microbit_v1_43
+mbed target nrf52_microbit_v1_44
 mbed toolchain GCC_ARM
 mbed deploy
 ```
@@ -108,10 +110,10 @@ Or if you want to manually add the flags previously configured in the project
 on the "Initialise" section:
 
 ```
-mbed compile -m nrf52_microbit_v1_43 -t GCC_ARM
+mbed compile -m nrf52_microbit_v1_44 -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_44/GCC_ARM/mbedos-nrf52-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
@@ -128,7 +130,9 @@ method.
 
 Only the latest target is supported in the Makefile.
 
-At the time of writing this would be v1.43.4 boards.
+At the time of writing this would be v1.43.4 boards. Since the v1.44.4 update
+does not affect the target configuration there was no need to regenerate the
+Makefile.
 
 ### Initialise
 
@@ -170,7 +174,7 @@ some of those changes (and the header info) might need to be preserved in the
 new regenerated version.
 
 ```
-mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_43 --profile develop
+mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_44 --profile develop
 ```
 
 
@@ -188,7 +192,7 @@ as they are exposed via the Edge Connector to be used as normal GPIOs.
 To change this and use them for NFC you can perform the following changes:
 - Mbed: Update the `mbed_app.json` file to include a remove macro entry in the micro:bit target.
     ```
-    "NRF52_MICROBIT_v1_43": {
+    "NRF52_MICROBIT_v1_44": {
         "target.macros_remove": ["CONFIG_NFCT_PINS_AS_GPIOS"]
     }
     ```
