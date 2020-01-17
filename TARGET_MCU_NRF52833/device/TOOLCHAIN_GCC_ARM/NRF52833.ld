@@ -33,7 +33,7 @@
 #if !defined(MBED_RAM_START)
   #if defined(SOFTDEVICE_PRESENT)
     #define MBED_RAM_START  0x20003188
-    #define MBED_RAM_SIZE   0x3CE78
+    #define MBED_RAM_SIZE   0x1CE78
   #else
     #define MBED_RAM_START  0x20000000
     #define MBED_RAM_SIZE   0x20000
@@ -155,12 +155,14 @@ SECTIONS
     .ARM.extab :
     {
         *(.ARM.extab* .gnu.linkonce.armextab.*)
+        . = ALIGN(8);
     } > FLASH
 
     __exidx_start = .;
     .ARM.exidx :
     {
         *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+        . = ALIGN(8);
     } > FLASH
     __exidx_end = .;
 
