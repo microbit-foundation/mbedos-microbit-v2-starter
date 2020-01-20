@@ -33,6 +33,7 @@
         "extra_labels_add": [
             "MCU_NRF52833"
         ],
+        "static_memory_defines": false,
         "macros_add": [
             "TARGET_MCU_NRF52833",
             "NRFX_RNG_ENABLED=1",
