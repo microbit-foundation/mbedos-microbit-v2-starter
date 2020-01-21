@@ -48,9 +48,10 @@ As there are multiple revisions of the nRF52 board we are using multiple mbed
 targets.
 
 - `nrf52_microbit_v1_41`: For the micro:bit v1.41RC2, v1.41RC4, and v1.41RC5
-- `nrf52_microbit_v1_43`: For the micro:bit v1.43.4
-- `nrf52_microbit_v1_44`: For the micro:bit v1.44.4
-- `nrf52833_dk`: For the Nordic nRF52833 DK board
+  (nRF52832)
+- `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing)
+- `nrf52_microbit_v1_43`: For the micro:bit v1.43.4 (nRF52833)
+- `nrf52_microbit_v1_44`: For the micro:bit v1.44.4 (nRF52833)
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
