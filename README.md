@@ -28,7 +28,10 @@ As there are multiple revisions of the nRF52 board we are using multiple mbed
 targets.
 
 - `nrf52_microbit_v1_41`: For the micro:bit v1.41RC2, v1.41RC4, and v1.41RC5
-- `nrf52_microbit_v1_43`: For the micro:bit v1.43.4
+  (nRF52832)
+- `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing)
+- `nrf52_microbit_v1_43`: For the micro:bit v1.43.4 (nRF52833)
+- `nrf52_microbit_v1_44`: For the micro:bit v1.44.4 (nRF52833)
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
@@ -42,7 +45,7 @@ for your board.
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
 mbed config root .
-mbed target nrf52_microbit_v1_43
+mbed target nrf52_microbit_v1_44
 mbed toolchain GCC_ARM
 mbed deploy
 ```
@@ -74,9 +77,9 @@ Or if you want to manually add the flags previously configured in the project
 on the "Initialise" section:
 
 ```
-mbed compile -m nrf52_microbit_v1_43 -t GCC_ARM
+mbed compile -m nrf52_microbit_v1_44 -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_44/GCC_ARM/mbedos-nrf52-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
