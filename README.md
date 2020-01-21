@@ -42,8 +42,6 @@ Note that for the `mbed target ...` line you should select the right target
 for your board.
 
 ```
-git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
-cd mbedos-nrf52-starter
 mbed config root .
 mbed target nrf52_microbit_v1_44
 mbed toolchain GCC_ARM
