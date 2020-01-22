@@ -152,10 +152,10 @@ typedef enum {
     RING2 = P0_4,
 
     // GPIO
-    GPIO1 = P0_10,
+    GPIO1 = P0_28,
     GPIO2 = P0_9,
-    GPIO3 = P1_2,
-    GPIO4 = P0_12,
+    GPIO3 = P0_29,
+    GPIO4 = P0_10,
 
     // Audio
     SPEAKER = P0_0,
