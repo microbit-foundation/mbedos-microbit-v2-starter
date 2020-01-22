@@ -3,7 +3,9 @@
 Project description.
 
 
-## Requirements
+## MbedOS Project Set-up
+
+##\ Requirements
 
 - git
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
@@ -11,9 +13,6 @@ Project description.
 - pip (version >=10.0)
 - Mercurial
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
-
-
-## Using Mbed
 
 ### Install dependencies
 
