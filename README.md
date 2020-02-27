@@ -1,11 +1,22 @@
 # Project Title
 
-Project description.
+This branch removes the following to be a smaller template for simple programs:
+- Makefile
+- VSCode config
+- FXOS and LSM libraries
+- Example files
+- Configures MbedOS without softdevice
+    - Can be reverted in mbed_app.json
+- Configures MbedOS without RTOS
+    - Can be reverted by deleting .mbedignore
+
+Replace this content with your own project description.
+
 
 
 ## MbedOS Project Set-up
 
-##\ Requirements
+## Requirements
 
 - git
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)

@@ -18,10 +18,16 @@
             "target.lf_clock_src": "NRF_LF_SRC_RC"
         },
         "NRF52_MICROBIT_v1_41": {
+            "target.extra_labels_remove": ["SOFTDEVICE_COMMON", "SOFTDEVICE_S140_FULL"],
+            "target.extra_labels_add": ["SOFTDEVICE_NONE"]
         },
         "NRF52_MICROBIT_v1_43": {
+            "target.extra_labels_remove": ["SOFTDEVICE_COMMON", "SOFTDEVICE_S140_FULL"],
+            "target.extra_labels_add": ["SOFTDEVICE_NONE"]
         },
         "NRF52_MICROBIT_v1_44": {
+            "target.extra_labels_remove": ["SOFTDEVICE_COMMON", "SOFTDEVICE_S140_FULL"],
+            "target.extra_labels_add": ["SOFTDEVICE_NONE"]
         }
     }
 }
