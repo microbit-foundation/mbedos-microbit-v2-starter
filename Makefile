@@ -1228,7 +1228,7 @@ INCLUDE_PATHS += -I.././mbed-os/usb/device/utilities/events
 
 LIBRARY_PATHS :=
 LIBRARIES :=
-LINKER_SCRIPT ?= .././TARGET_NRF52_MICROBIT_v1_43/TOOLCHAIN_GCC_ARM/NRF52833.ld
+LINKER_SCRIPT ?= .././TARGET_MCU_NRF52833/device/TOOLCHAIN_GCC_ARM/NRF52833.ld
 
 # Objects and Paths
 ###############################################################################

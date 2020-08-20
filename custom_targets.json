@@ -83,5 +83,14 @@
     },
     "NRF52_MICROBIT_v1_44": {
         "inherits": ["NRF52_MICROBIT_v1_43"]
+    },
+    "NRF52_MICROBIT_v1_45": {
+        "inherits": ["NRF52_MICROBIT_v1_43"]
+    },
+    "NRF52_MICROBIT_v1_46": {
+        "inherits": ["NRF52_MICROBIT_v1_43"]
+    },
+    "NRF52_MICROBIT_v1_47": {
+        "inherits": ["NRF52_MICROBIT_v1_43"]
     }
 }

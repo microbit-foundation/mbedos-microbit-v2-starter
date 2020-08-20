@@ -24,7 +24,7 @@ TBD.
 
 **Mbed only requirements:**
 - Python (2 or 3, at the moment Python 2 might be preferred)
-- pip (version >=10.0)
+- pip (version >= 10.0)
 - Mercurial
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
 
@@ -51,7 +51,7 @@ targets.
   (nRF52832)
 - `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing)
 - `nrf52_microbit_v1_43`: For the micro:bit v1.43.4 (nRF52833)
-- `nrf52_microbit_v1_44`: For the micro:bit v1.44.4 (nRF52833)
+- `nrf52_microbit_v1_44` /`nrf52_microbit_v1_45` / `nrf52_microbit_v1_46` / `nrf52_microbit_v1_47`: These board versions do not really need a new target and are the same as the `nrf52_microbit_v1_43`
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
@@ -79,7 +79,7 @@ for your board.
 git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
 cd mbedos-nrf52-starter
 mbed config root .
-mbed target nrf52_microbit_v1_44
+mbed target nrf52_microbit_v1_43
 mbed toolchain GCC_ARM
 mbed deploy
 ```
@@ -111,10 +111,10 @@ Or if you want to manually add the flags previously configured in the project
 on the "Initialise" section:
 
 ```
-mbed compile -m nrf52_microbit_v1_44 -t GCC_ARM
+mbed compile -m nrf52_microbit_v1_43 -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_44/GCC_ARM/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-nrf52-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
@@ -131,9 +131,9 @@ method.
 
 Only the latest target is supported in the Makefile.
 
-At the time of writing this would be v1.43.4 boards. Since the v1.44.4 update
-does not affect the target configuration there was no need to regenerate the
-Makefile.
+At the time of writing this would be v1.43.4 boards. Since the v1.44, v1.45,
+v1.46, v1.47 board updates does not affect the target configuration there was
+no need to regenerate the Makefile.
 
 ### Initialise
 
@@ -175,7 +175,7 @@ some of those changes (and the header info) might need to be preserved in the
 new regenerated version.
 
 ```
-mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_44 --profile develop
+mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_43 --profile develop
 ```
 
 
