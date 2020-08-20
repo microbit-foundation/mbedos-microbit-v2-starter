@@ -214,4 +214,5 @@ TBD.
 
 ## License
 
-TBD.
+Apache License Version 2.0.
+Please see the [LICENSE](LICENSE) file.
