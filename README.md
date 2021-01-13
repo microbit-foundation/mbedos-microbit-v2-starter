@@ -50,7 +50,13 @@ targets.
   (nRF52832)
 - `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing)
 - `nrf52_microbit_v1_43`: For the micro:bit v1.43.4 (nRF52833)
-- `nrf52_microbit_v1_44` /`nrf52_microbit_v1_45` / `nrf52_microbit_v1_46` / `nrf52_microbit_v1_47`: These board versions do not really need a new target and are the same as the `nrf52_microbit_v1_43`
+- `nrf52_microbit_v1_44` /`nrf52_microbit_v1_45` / `nrf52_microbit_v1_46` /
+  `nrf52_microbit_v1_47`: These board versions do not really need a new target
+  and are the same as the `nrf52_microbit_v1_43`
+- `nrf52_microbit_v2`: This is essentially the same as `nrf52_microbit_v1_43`,
+  but since the board is only manufactured in the `S` variant, only contains
+  the LSM motion sensor (no FXOS), so it's useful to use this target name to
+  be able to do conditional compilation.
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
@@ -78,7 +84,7 @@ for your board.
 git clone https://github.com/microbit-foundation/mbedos-microbit-v2-starter.git
 cd mbedos-microbit-v2-starter
 mbed config root .
-mbed target nrf52_microbit_v1_43
+mbed target nrf52_microbit_v2
 mbed toolchain GCC_ARM
 mbed deploy
 ```
@@ -110,10 +116,10 @@ Or if you want to manually add the flags previously configured in the project
 on the "Initialise" section:
 
 ```
-mbed compile -m nrf52_microbit_v1_43 -t GCC_ARM
+mbed compile -m nrf52_microbit_v2 -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-microbit-v2-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V2/GCC_ARM/mbedos-microbit-v2-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
@@ -174,7 +180,7 @@ some of those changes (and the header info) might need to be preserved in the
 new regenerated version.
 
 ```
-mbed-cli export -i GCC_ARM -m nrf52_microbit_v1_43 --profile develop
+mbed-cli export -i GCC_ARM -m nrf52_microbit_v2 --profile develop
 ```
 
 
