@@ -7,11 +7,11 @@ The linker files `NRF52833.ld` are based on the NRF52840 version on
 from commit `1bf6b20df9d3cd5f29f001ffc6f0d0fcbbb96118`:
 https://github.com/ARMmbed/mbed-os/blob/1bf6b20df9d3cd5f29f001ffc6f0d0fcbbb96118/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF52/TARGET_MCU_NRF52840/device/TOOLCHAIN_GCC_ARM/NRF52840.ld
 
-The changes made to the memory reagions in the linker file can be seen in this
+The changes made to the memory regions in the linker file can be seen in this
 GitHub PR comment:
-https://github.com/microbit-foundation/mbedos-nrf52-starter/pull/12#issuecomment-575753666
+https://github.com/microbit-foundation/mbedos-microbit-v2-starter/pull/12#issuecomment-575753666
 
-### Failed attempts to overwritte nrf52840 target memory regions
+### Failed attempts to overwrite nrf52840 target memory regions
 
 Things we tried, and didn't work, to reduce the flash and RAM without having a
 custom linker file:

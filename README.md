@@ -1,4 +1,4 @@
-# Example nRF52 project for Mbed OS
+# Example micro:bit V2 project for Mbed OS
 
 ## Table of contents
 
@@ -14,7 +14,7 @@
 
 ## Features
 
-TBD.
+This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-microbit/).
 
 
 ## Requirements
@@ -76,8 +76,8 @@ Note that for the `mbed target ...` line you should select the right target
 for your board.
 
 ```
-git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
-cd mbedos-nrf52-starter
+git clone https://github.com/microbit-foundation/mbedos-microbit-v2-starter.git
+cd mbedos-microbit-v2-starter
 mbed config root .
 mbed target nrf52_microbit_v1_43
 mbed toolchain GCC_ARM
@@ -114,7 +114,7 @@ on the "Initialise" section:
 mbed compile -m nrf52_microbit_v1_43 -t GCC_ARM
 ```
 
-Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-nrf52-starter.hex`
+Build output can be found in: `./BUILD/NRF52_MICROBIT_V1_43/GCC_ARM/mbedos-microbit-v2-starter.hex`
 
 If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
 
@@ -138,8 +138,8 @@ no need to regenerate the Makefile.
 ### Initialise
 
 ```
-git clone https://github.com/microbit-foundation/mbedos-nrf52-starter.git
-cd mbedos-nrf52-starter
+git clone https://github.com/microbit-foundation/mbedos-microbit-v2-starter.git
+cd mbedos-microbit-v2-starter
 git clone https://github.com/ARMmbed/mbed-os.git
 ```
 
@@ -159,13 +159,13 @@ git reset --hard <commit_hash_here>
 
 ### Build
 
-From the `mbedos-nrf52-starter` folder run:
+From the `mbedos-microbit-v2-starter` folder run:
 
 ```
 make
 ```
 
-Build output can be found in: `./BUILD/mbedos-nrf52-starter-combined.hex`
+Build output can be found in: `./BUILD/mbedos-microbit-v2-starter-combined.hex`
 
 ### Regenerate Makefile
 

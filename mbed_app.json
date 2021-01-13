@@ -1,5 +1,5 @@
 {
-    "artifact_name": "mbedos-nrf52-starter",
+    "artifact_name": "mbedos-microbit-v2-starter",
     "target_overrides": {
         "*": {
             "platform.stack-stats-enabled": true,

@@ -59,7 +59,7 @@ VPATH = ..
 ###############################################################################
 # Project settings
 
-PROJECT := mbedos-nrf52-starter
+PROJECT := mbedos-microbit-v2-starter
 
 
 # Project settings
