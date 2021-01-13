@@ -8,7 +8,6 @@
 - [Using Make](#using-make)
 - [Visual Studio Code](#visual-studio-code)
 - [Using NFC](#using-nfc)
-- [Contributing](#contributing)
 - [License](#license)
 
 
@@ -205,11 +204,6 @@ To change this and use them for NFC you can perform the following changes:
     ...
     ASM_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
     ```
-
-
-## Contributing
-
-TBD.
 
 
 ## License
