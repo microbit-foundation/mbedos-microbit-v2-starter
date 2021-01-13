@@ -168,6 +168,9 @@ typedef enum {
     CTS_PIN_NUMBER = p7,
     RTS_PIN_NUMBER = p5,
 
+    // Other micro:bit specific pins
+    COMBINED_SENSOR_INT = P0_25,
+
     // mBed interface Pins
     USBTX = TX_PIN_NUMBER,
     USBRX = RX_PIN_NUMBER,

@@ -25,12 +25,19 @@
 
 
 // Different boards have different I2C addresses for the sensors
-#ifdef TARGET_NRF52_MICROBIT_v1_41
-    #define FXOS_ADDR (0x1E << 1)
-#elif TARGET_NRF52_MICROBIT_v1_43
-    #define FXOS_ADDR (0x1F << 1)
+#if defined(TARGET_NRF52_MICROBIT_v2)
     #define LSM_ACC_ADDR (0x19 << 1)
     #define LSM_MAG_ADDR (0x1E << 1)
+    #define LSM_PRESENT 1
+#elif defined(TARGET_NRF52_MICROBIT_v1_43)
+    #define FXOS_ADDR (0x1F << 1)
+    #define FXOS_PRESENT 1
+    #define LSM_ACC_ADDR (0x19 << 1)
+    #define LSM_MAG_ADDR (0x1E << 1)
+    #define LSM_PRESENT 1
+#elif defined(TARGET_NRF52_MICROBIT_v1_41)
+    #define FXOS_ADDR (0x1E << 1)
+    #define FXOS_PRESENT 1
 #else
     #error "The selected target has not been configured in main.cpp."
 #endif
@@ -40,9 +47,16 @@ int main(void) {
     // Initialise the serial
     Serial pc(USBTX, USBRX);
     pc.baud(115200);
+    pc.printf("Starting programme.\n");
 
-    // Initialise the FXOS
     DevI2C i2c(I2C_SDA0, I2C_SCL0);
+    // This is an open drain combined interrupt line, not used in this example
+    // but need the pull up to work
+    DigitalIn sensor_int(COMBINED_SENSOR_INT);
+    sensor_int.mode(PullUp);
+
+#ifdef FXOS_PRESENT
+    // Initialise the FXOS
     FXOS8700QAccelerometer accFxos(i2c, FXOS_ADDR);
     FXOS8700QMagnetometer magFxos(i2c, FXOS_ADDR);
     if ((accFxos.whoAmI() != 0xC7) || (magFxos.whoAmI() != 0xC7)) {
@@ -51,8 +65,8 @@ int main(void) {
     }
     accFxos.enable();
     magFxos.enable();
-
-#ifdef TARGET_NRF52_MICROBIT_v1_43
+#endif
+#ifdef LSM_PRESENT
     // Initialise the LSM303 only on v1.43
     LSM303AGRAccSensor accLsm(&i2c, LSM_ACC_ADDR);
     LSM303AGRMagSensor magLsm(&i2c, LSM_MAG_ADDR);
@@ -77,12 +91,13 @@ int main(void) {
     motion_data_counts_t accFxosData, magFxosData;
     int32_t accLsmData[3], magLsmData[3];
     while (true) {
+#ifdef FXOS_PRESENT
         accFxos.getAxis(accFxosData);
         magFxos.getAxis(magFxosData);
         pc.printf("FXOS Acc: [X:%d] [Y:%d] [Z:%d]\n", accFxosData.x, accFxosData.y, accFxosData.z);
         pc.printf("FXOS Mag: [X:%d] [Y:%d] [Z:%d]\n", magFxosData.x, magFxosData.y, magFxosData.z);
-
-#ifdef TARGET_NRF52_MICROBIT_v1_43
+#endif
+#ifdef LSM_PRESENT
         accLsm.get_x_axes(accLsmData);
         magLsm.get_m_axes(magLsmData);
         pc.printf("\nLSM  Acc: [X:%d] [Y:%d] [Z:%d]\n", accLsmData[0], accLsmData[1], accLsmData[2]);

@@ -193,6 +193,9 @@ typedef enum {
     MIC = P0_5,
     RUN_MIC = P0_20,
 
+    // Other micro:bit specific pins
+    COMBINED_SENSOR_INT = P0_25,
+
     // UART
     RX_PIN_NUMBER  = P1_8,
     TX_PIN_NUMBER  = P0_6,
