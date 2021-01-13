@@ -214,5 +214,9 @@ TBD.
 
 ## License
 
-Apache License Version 2.0.
+All files specific to this project are Apache License Version 2.0.
 Please see the [LICENSE](LICENSE) file.
+
+Some files originated from the
+[Mbed OS project](https://github.com/ARMmbed/mbed-os), their copyright and
+license has been preserved in each file header.
