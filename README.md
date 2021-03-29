@@ -9,6 +9,7 @@
 - [Visual Studio Code](#visual-studio-code)
 - [Using NFC](#using-nfc)
 - [License](#license)
+- [Code of Conduct](#Code of Conduct)
 
 
 ## Features
@@ -220,3 +221,7 @@ Please see the [LICENSE](LICENSE) file.
 Some files originated from the
 [Mbed OS project](https://github.com/ARMmbed/mbed-os), their copyright and
 license has been preserved in each file header.
+
+## Code of Conduct
+
+Trust, partnership, simplicity and passion are our core values we live and breathe in our daily work life and within our projects. Our open-source projects are no exception. We have an active community which spans the globe and we welcome and encourage participation and contributions to our projects by everyone. We work to foster a positive, open, inclusive and supportive environment and trust that our community respects the micro:bit code of conduct. Please see our [code of conduct](https://microbit.org/safeguarding/) which outlines our expectations for all those that participate in our community and details on how to report any concerns and what would happen should breaches occur.
