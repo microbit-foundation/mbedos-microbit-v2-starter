@@ -9,7 +9,7 @@
 - [Visual Studio Code](#visual-studio-code)
 - [Using NFC](#using-nfc)
 - [License](#license)
-- [Code of Conduct](#Code of Conduct)
+- [Code of Conduct](#code-of-conduct)
 
 
 ## Features
