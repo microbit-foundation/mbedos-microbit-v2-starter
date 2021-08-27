@@ -95,16 +95,5 @@
     },
     "NRF52_MICROBIT_v2": {
         "inherits": ["NRF52_MICROBIT_v1_43"]
-    },
-    "NRF52_MICROBIT_v2_NOSD": {
-        "inherits": ["NRF52_MICROBIT_v1_43"],
-        "extra_labels_remove": [
-            "NORDIC_SOFTDEVICE",
-            "SOFTDEVICE_COMMON",
-            "SOFTDEVICE_S140_FULL"
-        ],
-        "extra_labels_add": [
-            "SOFTDEVICE_NONE"
-        ]
     }
 }

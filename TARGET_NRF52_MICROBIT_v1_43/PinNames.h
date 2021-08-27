@@ -156,9 +156,6 @@ typedef enum {
     P1_14 = p46,
     P1_15 = p47,
 
-    // LED in the nRF52833 DK board
-    LED1 = P0_13,
-
     // Buttons A and B
     BUTTON1 = P0_14,
     BUTTON2 = P0_23,
@@ -203,8 +200,8 @@ typedef enum {
     RTS_PIN_NUMBER = p5,
 
     // mBed interface Pins
-    USBTX = TX_PIN_NUMBER,
-    USBRX = RX_PIN_NUMBER,
+    CONSOLE_TX = TX_PIN_NUMBER,
+    CONSOLE_RX = RX_PIN_NUMBER,
     STDIO_UART_TX = TX_PIN_NUMBER,
     STDIO_UART_RX = RX_PIN_NUMBER,
     STDIO_UART_CTS = CTS_PIN_NUMBER,

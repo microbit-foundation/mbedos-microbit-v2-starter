@@ -31,9 +31,13 @@ DigitalOut cols[5] = {
     DigitalOut(COL_5, 1)
 };
 
-int main(void) {
-    //DigitalOut led(LED1, 0);
+#ifdef LED1
+    DigitalOut led(LED1);
+#else
+    bool led;
+#endif
 
+int main(void) {
     while (true) {
         for (int i = 0; i < 5; i++) {
             rows[i] = 1;
@@ -45,8 +49,11 @@ int main(void) {
                 int prev_j = j - 1;
                 if (prev_j < 0) prev_j = 4;
                 cols[prev_j] = 1;
-                wait(0.25);
-                //led = !led;
+
+                ThisThread::sleep_for(250);
+                //wait_us(250000);
+
+                led = !led;
             }
         }
     }

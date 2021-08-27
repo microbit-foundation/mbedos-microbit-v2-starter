@@ -122,11 +122,6 @@ typedef enum {
     P0_30 = p30,
     P0_31 = p31,
 
-    LED1    = p17,
-    LED2    = p18,
-    LED3    = p19,
-    LED4    = p20,
-
     // Buttons A and B
     BUTTON1 = P0_14,
     BUTTON2 = P0_15,
@@ -172,8 +167,8 @@ typedef enum {
     COMBINED_SENSOR_INT = P0_25,
 
     // mBed interface Pins
-    USBTX = TX_PIN_NUMBER,
-    USBRX = RX_PIN_NUMBER,
+    CONSOLE_TX = TX_PIN_NUMBER,
+    CONSOLE_RX = RX_PIN_NUMBER,
     STDIO_UART_TX = TX_PIN_NUMBER,
     STDIO_UART_RX = RX_PIN_NUMBER,
     STDIO_UART_CTS = CTS_PIN_NUMBER,

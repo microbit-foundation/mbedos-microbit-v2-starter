@@ -16,16 +16,19 @@
  */
 #include "mbed.h"
 
-int main(void) {
-    Serial pc(USBTX, USBRX);
-    pc.baud(115200);
-    pc.printf("hello world!\n");
+static UnbufferedSerial pc_serial(USBTX, USBRX, 115200);
 
-    // Echo back
-    while (true) {
-        while (pc.readable()) {
-            uint32_t val = pc.getc();
-            pc.putc(val);
-        }
+void rx_irq() {
+    char single_byte;
+    // Echo each byte received
+    if (pc_serial.read(&single_byte, 1)) {
+        pc_serial.write(&single_byte, 1);
     }
+}
+
+int main(void) {
+    char hello[] = "hello world!\n";
+    size_t hello_size = sizeof(hello) / sizeof(hello[0]);
+    pc_serial.write(hello, hello_size);
+    pc_serial.attach(&rx_irq, SerialBase::RxIrq);
 }

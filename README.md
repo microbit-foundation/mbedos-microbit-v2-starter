@@ -21,17 +21,11 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 
 - git
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-
-**Mbed only requirements:**
+    - v9.3.1 is the last tested version 
 - Python 3
 - pip (version >= 10.0)
-- Mercurial
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
-    - Last tested version is 1.10.2
-
-**Make only requirements:**
-- srec_cat
-- Make
+    - v1.10.2 is last tested version
 
 
 ## Using Mbed
@@ -41,7 +35,7 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 Install mbed-cli using one of the methods from the official documentation:
 https://os.mbed.com/docs/mbed-os/v5.12/tools/developing-mbed-cli.html
 
-The manual installation (in a Python 2 virtual environment) is the prefer method.
+The manual installation (in a Python 3 virtual environment) is the prefer method.
 
 ### Multiple targets
 
@@ -64,25 +58,6 @@ targets.
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
-
-### Mbed OS Version
-
-We are currently locked to
-[v5.12.4](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.12.4) as
-this is the last version to support Soft Device, which has been dropped in
-[v5.13+](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.13.0):
-
-> Default to Cordio BLE stack for NRF52* targets
-> [10709](https://github.com/ARMmbed/mbed-os/pull/10709)
-> 
-> Starting with mbed-os 5.13 and the introduction of Nordic SDK V15, Nordic
-> SoftDevice Bluetooth stack is not supported. Bluetooth remains supported with
-> the help of Arm's Cordio stack.
-
-### Mbed OS RTOS
-
-To compile the project without the Mbed OS RTOS edit the `.mbedignore` and
-uncomment all the entries.
 
 ### Initialise
 
@@ -130,73 +105,45 @@ mbed compile -m nrf52_microbit_v2 -t GCC_ARM
 
 Build output can be found in: `./BUILD/NRF52_MICROBIT_V2/GCC_ARM/mbedos-microbit-v2-starter.hex`
 
-If `mbed` cannot find the tools directory in mbed-os, then you may have to delete the mbed cache by removing `~/.mbed/`.
+If `mbed` cannot find the tools directory in mbed-os, then you may have to
+delete the mbed cache by removing `~/.mbed/`.
 
+### Mbed OS Version
 
-## Using Make (back up option only)
+This repo is currently configured Mbed OS to version
+[6.13.0]((https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-6.14.0)).
 
-The use of the Makefile is discouraged, and it is here only as a back up
-mechanism to compile the Mbed project.
-As the MakeFile is created based on the mbed project and some manual patches
-have to be applied, it is likely this method will fall behind compared the mbed
-method.
+The branch `xxxx` (commit `6adcd80982dbf5c2a2ef876d21d0f4a08db91644`) is
+configured to [v5.12.4](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.12.4),
+as this is the last Mbed OS version to support Soft Device.
 
-### Single target
+### Mbed OS RTOS
 
-Only the latest target is supported in the Makefile.
+This section needs to be updated to work with the Mbed OS v6 bare metal
+profile.
 
-At the time of writing this would be v1.43.4 boards. Since the v1.44, v1.45,
-v1.46, v1.47 board updates does not affect the target configuration there was
-no need to regenerate the Makefile.
-
-### Initialise
-
+mbed_app.json:
 ```
-git clone https://github.com/microbit-foundation/mbedos-microbit-v2-starter.git
-cd mbedos-microbit-v2-starter
-git clone https://github.com/ARMmbed/mbed-os.git
-```
-
-Then open the `mbed-os.lib` file with a text editor, it should have something
-like this:
-
-```
-https://github.com/ARMmbed/mbed-os/#73f096399b4cda1f780b140c87afad9446047432
-```
-
-The sequence after the `#` is the git commit needed of mbed-os, so:
-
-```
-cd mbed-os
-git reset --hard <commit_hash_here>
-```
-
-### Build
-
-From the `mbedos-microbit-v2-starter` folder run:
-
-```
-make
-```
-
-Build output can be found in: `./BUILD/mbedos-microbit-v2-starter-combined.hex`
-
-### Regenerate Makefile
-
-The Makefile can be regenerated using mbed-cli, however keep in mind that there
-has been changes applied (the file header contains more information), and
-some of those changes (and the header info) might need to be preserved in the
-new regenerated version.
-
-```
-mbed-cli export -i GCC_ARM -m nrf52_microbit_v2 --profile develop
+{
+    "requires": [
+        "bare-metal",
+        "drivers-usb",
+        "events"
+    ],
+    "target_overrides": {
+        "*": {
+            "target.c_lib": "small"
+        }
+    }
+}
 ```
 
 
 ## Visual Studio Code
 
 At the moment we have the default config files from the Mbed online compiler
-project exporter. These are using `make` but could be updated to use `mbed-cli`.
+project exporter. These are using removed `make` and have to be updated to use
+`mbed-cli`.
 
 
 ## Using NFC
@@ -207,17 +154,9 @@ as they are exposed via the Edge Connector to be used as normal GPIOs.
 To change this and use them for NFC you can perform the following changes:
 - Mbed: Update the `mbed_app.json` file to include a remove macro entry in the micro:bit target.
     ```
-    "NRF52_MICROBIT_v1_44": {
+    "NRF52_MICROBIT_v2": {
         "target.macros_remove": ["CONFIG_NFCT_PINS_AS_GPIOS"]
     }
-    ```
-- Makefile: Remove the following lines from the makefile.
-    ```
-    C_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
-    ...
-    CXX_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
-    ...
-    ASM_FLAGS += -DCONFIG_NFCT_PINS_AS_GPIOS
     ```
 
 

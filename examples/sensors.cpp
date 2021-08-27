@@ -43,11 +43,17 @@
 #endif
 
 
+BufferedSerial pc(CONSOLE_TX, CONSOLE_RX, 115200);
+
+FileHandle *mbed::mbed_override_console(int fd) {
+    return &pc;
+}
+
 int main(void) {
     // Initialise the serial
-    Serial pc(USBTX, USBRX);
-    pc.baud(115200);
-    pc.printf("Starting programme.\n");
+    
+    char start_str[] = "Starting programme.\n";
+    pc.write(start_str, strlen(start_str));
 
     DevI2C i2c(I2C_SDA0, I2C_SCL0);
     // This is an open drain combined interrupt line, not used in this example
@@ -60,7 +66,8 @@ int main(void) {
     FXOS8700QAccelerometer accFxos(i2c, FXOS_ADDR);
     FXOS8700QMagnetometer magFxos(i2c, FXOS_ADDR);
     if ((accFxos.whoAmI() != 0xC7) || (magFxos.whoAmI() != 0xC7)) {
-        pc.printf("Error reading the FXOS8700 Who Am I register.\n");
+        char msg[] = "Error reading the FXOS8700 Who Am I register.\n";
+        pc.write(msg, strlen(msg));
         for(;;);
     }
     accFxos.enable();
@@ -74,11 +81,13 @@ int main(void) {
     uint8_t whoAmIAccVal = 0;
     uint8_t whoAmIMagVal = 0;
     if ((magLsm.read_id(&whoAmIMagVal) != 0) || (whoAmIMagVal != 0x40)) {
-        pc.printf("Error reading the LSM303 Mag Who Am I register.\n");
+        char msg[] = "Error reading the LSM303 Mag Who Am I register.\n";
+        pc.write(msg, strlen(msg));
         for(;;);
     }
     if ((accLsm.read_id(&whoAmIAccVal) != 0) || (whoAmIAccVal != 0x33)) {
-        pc.printf("Error reading the LSM303 Acc Who Am I register.\n");
+        char msg[] = "Error reading the LSM303 Acc Who Am I register.\n";
+        pc.write(msg, strlen(msg));
         for(;;);
     }
     accLsm.init(NULL);
@@ -94,16 +103,16 @@ int main(void) {
 #ifdef FXOS_PRESENT
         accFxos.getAxis(accFxosData);
         magFxos.getAxis(magFxosData);
-        pc.printf("FXOS Acc: [X:%d] [Y:%d] [Z:%d]\n", accFxosData.x, accFxosData.y, accFxosData.z);
-        pc.printf("FXOS Mag: [X:%d] [Y:%d] [Z:%d]\n", magFxosData.x, magFxosData.y, magFxosData.z);
+        printf("FXOS Acc: [X:%d] [Y:%d] [Z:%d]\n", accFxosData.x, accFxosData.y, accFxosData.z);
+        printf("FXOS Mag: [X:%d] [Y:%d] [Z:%d]\n", magFxosData.x, magFxosData.y, magFxosData.z);
 #endif
 #ifdef LSM_PRESENT
         accLsm.get_x_axes(accLsmData);
         magLsm.get_m_axes(magLsmData);
-        pc.printf("\nLSM  Acc: [X:%d] [Y:%d] [Z:%d]\n", accLsmData[0], accLsmData[1], accLsmData[2]);
-        pc.printf("LSM  Mag: [X:%d] [Y:%d] [Z:%d]\n", magLsmData[0], magLsmData[1], magLsmData[2]);
+        printf("\nLSM  Acc: [X:%d] [Y:%d] [Z:%d]\n", accLsmData[0], accLsmData[1], accLsmData[2]);
+        printf("LSM  Mag: [X:%d] [Y:%d] [Z:%d]\n", magLsmData[0], magLsmData[1], magLsmData[2]);
 #endif
-        pc.printf("---------\n");
+        printf("---------\n");
         nrf_delay_ms(500);
     }
 }
