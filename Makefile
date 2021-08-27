@@ -896,7 +896,7 @@ OBJECTS += ./source/main.o
 
 
 INCLUDE_PATHS += -I../.
-INCLUDE_PATHS += -I.././TARGET_NRF52_MICROBIT_v2
+INCLUDE_PATHS += -I.././TARGET_NRF52_MICROBIT_v1_43
 INCLUDE_PATHS += -I.././mbed-os
 INCLUDE_PATHS += -I.././mbed-os/cmsis
 INCLUDE_PATHS += -I.././mbed-os/cmsis/TARGET_CORTEX_M
