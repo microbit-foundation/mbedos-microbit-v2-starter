@@ -1,1 +1,30 @@
 examples/*
+
+# Uncomment the following entries to compile without RTOS
+# mbed-os/rtos/*
+# mbed-os/usb/*
+# mbed-os/features/cellular/*
+# mbed-os/features/cryptocell/*
+# mbed-os/features/FEATURE_BLE/*
+# mbed-os/features/FEATURE_CLIENT/*
+# mbed-os/features/FEATURE_COMMON_PAL/*
+# mbed-os/features/FEATURE_UVISOR/*
+# mbed-os/features/frameworks/*
+# mbed-os/features/net/*
+# mbed-os/features/netsocket/*
+# mbed-os/features/nanostack/*
+# mbed-os/features/nvstore/*
+# mbed-os/features/storage/*
+# mbed-os/features/device_key/*
+# mbed-os/features/lorawan/*
+# mbed-os/features/lwipstack/*
+# mbed-os/features/mbedtls/*
+# mbed-os/features/nanostack/*
+# mbed-os/features/netsocket/*
+# mbed-os/features/nfc/*
+# mbed-os/features/storage/*
+# mbed-os/features/unsupported/*
+# mbed-os/events/*
+# mbed-os/components/802.15.4_RF/*
+# mbed-os/components/storage/*
+# mbed-os/components/wifi/*

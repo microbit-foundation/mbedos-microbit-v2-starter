@@ -27,6 +27,7 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 - pip (version >= 10.0)
 - Mercurial
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
+    - Last tested version is 1.10.2
 
 **Make only requirements:**
 - srec_cat
@@ -77,6 +78,11 @@ this is the last version to support Soft Device, which has been dropped in
 > Starting with mbed-os 5.13 and the introduction of Nordic SDK V15, Nordic
 > SoftDevice Bluetooth stack is not supported. Bluetooth remains supported with
 > the help of Arm's Cordio stack.
+
+### Mbed OS RTOS
+
+To compile the project without the Mbed OS RTOS edit the `.mbedignore` and
+uncomment all the entries.
 
 ### Initialise
 
