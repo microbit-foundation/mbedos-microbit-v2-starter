@@ -30,6 +30,8 @@
         "NRF52_MICROBIT_v1_47": {
         },
         "NRF52_MICROBIT_v2": {
+        },
+        "NRF52_MICROBIT_v2_NOSD": {
         }
     }
 }

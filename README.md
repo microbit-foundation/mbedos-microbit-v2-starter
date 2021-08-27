@@ -23,7 +23,7 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
 
 **Mbed only requirements:**
-- Python (2 or 3, at the moment Python 2 might be preferred)
+- Python 3
 - pip (version >= 10.0)
 - Mercurial
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
@@ -55,9 +55,11 @@ targets.
   `nrf52_microbit_v1_47`: These board versions do not really need a new target
   and are the same as the `nrf52_microbit_v1_43`
 - `nrf52_microbit_v2`: This is essentially the same as `nrf52_microbit_v1_43`,
-  but since the board is only manufactured in the `S` variant, only contains
-  the LSM motion sensor (no FXOS), so it's useful to use this target name to
-  be able to do conditional compilation.
+  but since the board is currently only manufactured in the `S` variant, only
+  contains the LSM motion sensor (no FXOS), so it's useful to use this target
+  name to be able to do conditional compilation.
+- `nrf52_microbit_v2_nosd`: V2 target without including SoftDevice (Nordic
+  Bluetooth stack).
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
