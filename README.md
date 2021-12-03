@@ -79,6 +79,9 @@ this is the last version to support Soft Device, which has been dropped in
 > SoftDevice Bluetooth stack is not supported. Bluetooth remains supported with
 > the help of Arm's Cordio stack.
 
+The [latest-mbedos](https://github.com/microbit-foundation/mbedos-microbit-v2-starter/tree/latest-mbedos)
+branch has been updated to use a newer version of MbedOS.
+
 ### Mbed OS RTOS
 
 To compile the project without the Mbed OS RTOS edit the `.mbedignore` and
