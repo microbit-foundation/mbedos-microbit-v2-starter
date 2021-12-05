@@ -28,3 +28,8 @@ jobs:
       - run: mbed config root .
       - run: mbed deploy
       - run: mbed compile -m nrf52_microbit_v2 -t GCC_ARM
+      - name: Upload hex file
+        uses: actions/upload-artifact@v1
+        with:
+          name: mbedos-microbit-v2-starter.hex
+          path: ./BUILD/NRF52_MICROBIT_V2/GCC_ARM/mbedos-microbit-v2-starter.hex
