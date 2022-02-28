@@ -21,7 +21,7 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 
 - git
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-    - v9.3.1 is the last tested version 
+    - v7.3.1 is the oldest and v10.2.1 the last tested versions
 - Python 3
 - pip (version >= 10.0)
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
@@ -33,7 +33,7 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 ### Install dependencies
 
 Install mbed-cli using one of the methods from the official documentation:
-https://os.mbed.com/docs/mbed-os/v5.12/tools/developing-mbed-cli.html
+https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html
 
 The manual installation (in a Python 3 virtual environment) is the prefer method.
 
@@ -113,9 +113,10 @@ delete the mbed cache by removing `~/.mbed/`.
 This repo is currently configured Mbed OS to version
 [6.13.0]((https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-6.14.0)).
 
-The branch `xxxx` (commit `6adcd80982dbf5c2a2ef876d21d0f4a08db91644`) is
-configured to [v5.12.4](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.12.4),
-as this is the last Mbed OS version to support Soft Device.
+The branch `mbedos-softdevice` (commit
+`9e185e9388cdd634ac4cc38f92a0bbf73af9c5b3`) is configured to
+[v5.12.4](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.12.4), as
+this is the last Mbed OS version to support the Nordic Soft Device (BLE stack).
 
 ### Mbed OS RTOS
 
@@ -168,6 +169,7 @@ Please see the [LICENSE](LICENSE) file.
 Some files originated from the
 [Mbed OS project](https://github.com/ARMmbed/mbed-os), their copyright and
 license has been preserved in each file header.
+
 
 ## Code of Conduct
 
