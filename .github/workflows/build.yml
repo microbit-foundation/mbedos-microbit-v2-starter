@@ -1,0 +1,35 @@
+name: Build Mbed OS project
+
+on:
+  push:
+    branches: '*'
+  pull_request:
+    branches: '*'
+
+jobs:
+  build:
+    name: Build project
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install GNU Arm Embedded Toolchain (arm-none-eabi-gcc)
+        uses: carlosperate/arm-none-eabi-gcc-action@v1
+        with:
+          release: '10-2020-q4'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+      # Some dependencies used by the old Mbed OS version depend on pip < v10
+      # & pip v9 struggles to install new version of cryptography (which uses rust)
+      - run: pip install pip==9.0.3 cryptography==3.3.2
+      # Old version of mbedos can have dependency clashes with newer mbed-cli
+      - run: pip install mbed-cli
+      - run: mbed config root .
+      - run: mbed deploy
+      - run: mbed compile -m nrf52_microbit_v2 -t GCC_ARM
+      - name: Upload hex file
+        uses: actions/upload-artifact@v1
+        with:
+          name: mbedos-microbit-v2-starter.hex
+          path: ./BUILD/NRF52_MICROBIT_V2/GCC_ARM/mbedos-microbit-v2-starter.hex
