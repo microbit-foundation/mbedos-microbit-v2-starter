@@ -4,12 +4,6 @@
         "*": {
             "platform.all-stats-enabled": false
         },
-        "NRF52_DK": {
-            "target.lf_clock_src": "NRF_LF_SRC_RC"
-        },
-        "NRF52840_DK": {
-            "target.lf_clock_src": "NRF_LF_SRC_RC"
-        },
         "NRF52833_DK": {
             "target.lf_clock_src": "NRF_LF_SRC_RC"
         },
@@ -26,8 +20,6 @@
         "NRF52_MICROBIT_v1_47": {
         },
         "NRF52_MICROBIT_v2": {
-        },
-        "NRF52_MICROBIT_v2_NOSD": {
         }
     }
 }

@@ -42,8 +42,6 @@ The manual installation (in a Python 3 virtual environment) is the prefer method
 As there are multiple revisions of the nRF52 board we are using multiple mbed
 targets.
 
-- `nrf52_microbit_v1_41`: For the micro:bit v1.41RC2, v1.41RC4, and v1.41RC5
-  (nRF52832)
 - `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing)
 - `nrf52_microbit_v1_43`: For the micro:bit v1.43.4 (nRF52833)
 - `nrf52_microbit_v1_44` /`nrf52_microbit_v1_45` / `nrf52_microbit_v1_46` /
@@ -53,11 +51,11 @@ targets.
   but since the board is currently only manufactured in the `S` variant, only
   contains the LSM motion sensor (no FXOS), so it's useful to use this target
   name to be able to do conditional compilation.
-- `nrf52_microbit_v2_nosd`: V2 target without including SoftDevice (Nordic
-  Bluetooth stack).
 
 The version of the board can be seen on the silkscreen at the back, near the
 right side of the edge connector.
+
+The branch `mbedos-softdevice` contains older targets.
 
 ### Initialise
 
@@ -74,17 +72,12 @@ mbed deploy
 ```
 
 If it fails to install some of the Python dependencies on the last command (
-`mbed deploy`) you can try again manually:
+`mbed deploy`) you can try again manually.
+
+Run in the Python environment that has `mbed-cli` installed:
 
 ```
 pip install -r mbed-os/requirements.txt
-```
-
-Ideally you should be using virtual environments, alternatively you can use the
-`--user` flag:
-
-```
-pip install --user -r mbed-os/requirements.txt
 ```
 
 **Warning:** Do not use `mbed new .` as it can update MbedOS to the latest
