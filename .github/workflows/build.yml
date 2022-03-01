@@ -8,14 +8,18 @@ on:
 
 jobs:
   build:
-    name: Build project
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        # Testing an old GCC version, a version officially supported by Mbed, and latest
+        gcc: ['7-2017-q4', '9-2020-q2', 'latest']
+    name: Build - gcc ${{ matrix.gcc }}
     steps:
       - uses: actions/checkout@v2
       - name: Install GNU Arm Embedded Toolchain (arm-none-eabi-gcc)
         uses: carlosperate/arm-none-eabi-gcc-action@v1
         with:
-          release: '10-2020-q4'
+          release: ${{ matrix.gcc }}
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
