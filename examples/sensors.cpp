@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Micro:bit Educational Foundation and contributors
+ * Copyright 2020-2022 Micro:bit Educational Foundation and contributors
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -112,7 +112,7 @@ int main(void) {
         printf("\nLSM  Acc: [X:%d] [Y:%d] [Z:%d]\n", accLsmData[0], accLsmData[1], accLsmData[2]);
         printf("LSM  Mag: [X:%d] [Y:%d] [Z:%d]\n", magLsmData[0], magLsmData[1], magLsmData[2]);
 #endif
-        printf("---------\n");
-        nrf_delay_ms(500);
+        printf("\n---------\n");
+        nrf_delay_ms(200);
     }
 }
