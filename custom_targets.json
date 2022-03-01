@@ -7,9 +7,13 @@
             "MCU_NRF52833"
         ],
         "static_memory_defines": false,
+        "device_has_add": [
+            "I2CSLAVE"
+        ],
         "macros_add": [
             "TARGET_MCU_NRF52833",
             "NRFX_RNG_ENABLED=1",
+            "NRFX_TWIS_ENABLED=1",
             "RNG_ENABLED=1",
             "NRF_QUEUE_ENABLED=1"
         ],
