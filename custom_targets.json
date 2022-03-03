@@ -29,7 +29,7 @@
         ],
         "device_has_remove": ["ITM"]
     },
-    "NRF52_MICROBIT_v1_43": {
+    "NRF52_MICROBIT_V2": {
         "inherits": ["MCU_NRF52833"],
         "macros_add": [
             "WSF_MAX_HANDLERS=10",
@@ -55,23 +55,23 @@
             "lf_clock_src": "NRF_LF_SRC_RC"
         }
     },
-    "NRF52_MICROBIT_v1_44": {
-        "inherits": ["NRF52_MICROBIT_v1_43"]
+    "NRF52_MICROBIT_V1_43": {
+        "inherits": ["NRF52_MICROBIT_V2"]
     },
-    "NRF52_MICROBIT_v1_45": {
-        "inherits": ["NRF52_MICROBIT_v1_43"]
+    "NRF52_MICROBIT_V1_44": {
+        "inherits": ["NRF52_MICROBIT_V2"]
     },
-    "NRF52_MICROBIT_v1_46": {
-        "inherits": ["NRF52_MICROBIT_v1_43"]
+    "NRF52_MICROBIT_V1_45": {
+        "inherits": ["NRF52_MICROBIT_V2"]
     },
-    "NRF52_MICROBIT_v1_47": {
-        "inherits": ["NRF52_MICROBIT_v1_43"]
+    "NRF52_MICROBIT_V1_46": {
+        "inherits": ["NRF52_MICROBIT_V2"]
     },
-    "NRF52_MICROBIT_v2": {
-        "inherits": ["NRF52_MICROBIT_v1_43"]
+    "NRF52_MICROBIT_V1_47": {
+        "inherits": ["NRF52_MICROBIT_V2"]
     },
     "NRF52_MICROBIT_V2_IF_820": {
-        "inherits": ["NRF52_MICROBIT_v1_43"],
+        "inherits": ["NRF52_MICROBIT_V2"],
         "core": "Cortex-M4",
         "extra_labels_remove": [
         ],

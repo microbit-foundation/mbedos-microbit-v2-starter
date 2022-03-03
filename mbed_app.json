@@ -7,17 +7,17 @@
         "NRF52833_DK": {
             "target.lf_clock_src": "NRF_LF_SRC_RC"
         },
-        "NRF52_MICROBIT_v1_43": {
+        "NRF52_MICROBIT_V1_43": {
         },
-        "NRF52_MICROBIT_v1_44": {
+        "NRF52_MICROBIT_V1_44": {
         },
-        "NRF52_MICROBIT_v1_45": {
+        "NRF52_MICROBIT_V1_45": {
         },
-        "NRF52_MICROBIT_v1_46": {
+        "NRF52_MICROBIT_V1_46": {
         },
-        "NRF52_MICROBIT_v1_47": {
+        "NRF52_MICROBIT_V1_47": {
         },
-        "NRF52_MICROBIT_v2": {
+        "NRF52_MICROBIT_V2": {
         },
         "NRF52_MICROBIT_V2_IF_820": {
         },
