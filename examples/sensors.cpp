@@ -35,9 +35,6 @@
     #define LSM_ACC_ADDR (0x19 << 1)
     #define LSM_MAG_ADDR (0x1E << 1)
     #define LSM_PRESENT 1
-#elif defined(TARGET_NRF52_MICROBIT_v1_41)
-    #define FXOS_ADDR (0x1E << 1)
-    #define FXOS_PRESENT 1
 #else
     #error "The selected target has not been configured in main.cpp."
 #endif
