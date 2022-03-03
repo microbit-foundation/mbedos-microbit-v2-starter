@@ -25,13 +25,16 @@
 
 
 // Different boards have different I2C addresses for the sensors
-#if defined(TARGET_NRF52_MICROBIT_v2)
+#if defined(TARGET_NRF52_MICROBIT_V1_43)
+    // All TARGET_NRF52_MICROBIT_V1_4x targets are based on TARGET_NRF52_MICROBIT_V2,
+    // so they all contain the TARGET_NRF52_MICROBIT_V2 macro as well.
+    // Make sure any conditional compilation checks first for the V1_4x defines
+    #define FXOS_ADDR (0x1F << 1)
+    #define FXOS_PRESENT 1
     #define LSM_ACC_ADDR (0x19 << 1)
     #define LSM_MAG_ADDR (0x1E << 1)
     #define LSM_PRESENT 1
-#elif defined(TARGET_NRF52_MICROBIT_v1_43)
-    #define FXOS_ADDR (0x1F << 1)
-    #define FXOS_PRESENT 1
+#elif defined(TARGET_NRF52_MICROBIT_V2)
     #define LSM_ACC_ADDR (0x19 << 1)
     #define LSM_MAG_ADDR (0x1E << 1)
     #define LSM_PRESENT 1
@@ -48,7 +51,7 @@ FileHandle *mbed::mbed_override_console(int fd) {
 
 int main(void) {
     // Initialise the serial
-    
+
     char start_str[] = "Starting programme.\n";
     pc.write(start_str, strlen(start_str));
 
@@ -100,7 +103,7 @@ int main(void) {
 #ifdef FXOS_PRESENT
         accFxos.getAxis(accFxosData);
         magFxos.getAxis(magFxosData);
-        printf("FXOS Acc: [X:%d] [Y:%d] [Z:%d]\n", accFxosData.x, accFxosData.y, accFxosData.z);
+        printf("\nFXOS Acc: [X:%d] [Y:%d] [Z:%d]\n", accFxosData.x, accFxosData.y, accFxosData.z);
         printf("FXOS Mag: [X:%d] [Y:%d] [Z:%d]\n", magFxosData.x, magFxosData.y, magFxosData.z);
 #endif
 #ifdef LSM_PRESENT

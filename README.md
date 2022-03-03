@@ -157,7 +157,7 @@ as they are exposed via the Edge Connector to be used as normal GPIOs.
 To change this and use them for NFC you can perform the following changes:
 - Mbed: Update the `mbed_app.json` file to include a remove macro entry in the micro:bit target.
     ```
-    "NRF52_MICROBIT_v2": {
+    "NRF52_MICROBIT_V2": {
         "target.macros_remove": ["CONFIG_NFCT_PINS_AS_GPIOS"]
     }
     ```
