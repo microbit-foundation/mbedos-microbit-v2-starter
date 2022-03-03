@@ -4,8 +4,7 @@
 
 - [Features](#features)
 - [Requirements](#requirements)
-- [Using Mbed](#using-mbed)
-- [Using Make](#using-make)
+- [Building This Project](#building-this-project)
 - [Visual Studio Code](#visual-studio-code)
 - [Using NFC](#using-nfc)
 - [License](#license)
@@ -23,21 +22,17 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
     - v7.3.1 is the oldest and v10.2.1 the last tested versions
 - Python 3
-- pip (version >= 10.0)
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
     - v1.10.2 is last tested version
+    - Can be installed using one of the methods from the official documentation:
+      https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html
+    - The installers are outdated and not recommended
+    - If installed via pip a virtual environment is recommended
 
 
-## Using Mbed
+## Building This Project
 
-### Install dependencies
-
-Install mbed-cli using one of the methods from the official documentation:
-https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html
-
-The manual installation (in a Python 3 virtual environment) is the prefer method.
-
-### Multiple targets
+### Available Targets
 
 As there are multiple revisions of the nRF52 board we are using multiple mbed
 targets.
@@ -57,6 +52,12 @@ right side of the edge connector.
 
 The branch `mbedos-softdevice` contains older targets.
 
+#### Interface MCU
+
+The micro:bit V2.2 contains an nRF52 microcontroller as the
+[Interface MCU](https://tech.microbit.org/software/daplink-interface/) and Mbed
+OS targets has been created 
+
 ### Initialise
 
 Note that for the `mbed target ...` line you should select the right target
@@ -71,10 +72,10 @@ mbed toolchain GCC_ARM
 mbed deploy
 ```
 
-If it fails to install some of the Python dependencies on the last command (
-`mbed deploy`) you can try again manually.
+If it fails to install some of the Python dependencies on the last command
+(`mbed deploy`) you can try to install them manually.
 
-Run in the Python environment that has `mbed-cli` installed:
+Run this command in the Python environment that has `mbed-cli` installed:
 
 ```
 pip install -r mbed-os/requirements.txt
@@ -104,12 +105,13 @@ delete the mbed cache by removing `~/.mbed/`.
 ### Mbed OS Version
 
 This repo is currently configured Mbed OS to version
-[6.13.0]((https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-6.14.0)).
+[6.13.0](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-6.13.0).
 
 The branch `mbedos-softdevice` (commit
 `9e185e9388cdd634ac4cc38f92a0bbf73af9c5b3`) is configured to
 [v5.12.4](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.12.4), as
-this is the last Mbed OS version to support the Nordic Soft Device (BLE stack).
+this is the last Mbed OS version to support the Nordic Soft Device BLE stack
+before it was switched to the Cordio BLE stack.
 
 ### Mbed OS RTOS
 

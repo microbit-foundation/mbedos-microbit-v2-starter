@@ -47,7 +47,8 @@
             "NRF52_PAN_62",
             "NRF52_PAN_63",
             "NRF52_PAN_64",
-            "CONFIG_NFCT_PINS_AS_GPIOS"
+            "CONFIG_NFCT_PINS_AS_GPIOS",
+            "MICROBIT_TARGET"
         ],
         "device_has_remove": ["ITM"],
         "overrides": {
@@ -68,5 +69,24 @@
     },
     "NRF52_MICROBIT_v2": {
         "inherits": ["NRF52_MICROBIT_v1_43"]
+    },
+    "NRF52_MICROBIT_V2_IF_820": {
+        "inherits": ["NRF52_MICROBIT_v1_43"],
+        "core": "Cortex-M4",
+        "extra_labels_remove": [
+        ],
+        "macros_add": [
+            "MICROBIT_IF"
+        ],
+        "macros_remove": [
+            "MICROBIT_TARGET"
+        ],
+        "static_memory_defines": true,
+        "mbed_app_start": "0x8000",
+        "mbed_app_size": "0x17000",
+        "mbed_ram_size": "0x8000"
+    },
+    "NRF52_MICROBIT_V2_IF_833": {
+        "inherits": ["NRF52_MICROBIT_V2_IF_820"]
     }
 }

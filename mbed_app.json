@@ -20,6 +20,10 @@
         "NRF52_MICROBIT_v1_47": {
         },
         "NRF52_MICROBIT_v2": {
+        },
+        "NRF52_MICROBIT_V2_IF_820": {
+        },
+        "NRF52_MICROBIT_V2_IF_833": {
         }
     }
 }

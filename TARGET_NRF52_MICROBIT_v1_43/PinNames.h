@@ -156,12 +156,25 @@ typedef enum {
     P1_14 = p46,
     P1_15 = p47,
 
-    // Buttons A and B
+    // Not connected
+    NC = (int)0xFFFFFFFF,
+
+    // Buttons
+#if defined(TARGET_NRF52_MICROBIT_V2_IF_833)
+    BUTTON1 = P1_9,
+    BUTTON_RESET = BUTTON1,
+#elif defined(TARGET_NRF52_MICROBIT_V2_IF_820)
+    BUTTON1 = P0_6,
+    BUTTON_RESET = BUTTON1,
+#else
     BUTTON1 = P0_14,
     BUTTON2 = P0_23,
     BUTTONA = BUTTON1,
     BUTTONB = BUTTON2,
+#endif
 
+    // Target MCU only pins
+#if !defined(MICROBIT_IF)
     // LED matrix
     ROW_1 = P0_21,
     ROW_2 = P0_22,
@@ -179,63 +192,112 @@ typedef enum {
     RING1 = P0_3,
     RING2 = P0_4,
 
-    // GPIO
-    GPIO1 = P0_10,
-    GPIO2 = P0_9,
-    GPIO3 = P1_2,
-    GPIO4 = P0_12,
+    // Free edge connector GPIOs
+    GPIO1 = P0_10,  // Edge connector pin 8
+    GPIO2 = P0_9,   // Edge connector pin 9
+    GPIO3 = P1_2,   // Edge connector pin 16
+    GPIO4 = P0_12,  // Edge connector pin 12
 
     // Audio
     SPEAKER = P0_0,
     MIC = P0_5,
     RUN_MIC = P0_20,
+#endif
 
-    // Other micro:bit specific pins
+    // Interface MCU only pins
+#if defined(TARGET_NRF52_MICROBIT_V2_IF_833)
+    LED1 = P0_15,
+    LED2 = P0_17,
+#elif defined(TARGET_NRF52_MICROBIT_V2_IF_820)
+    LED1 = P0_14,
+    LED2 = P0_15,
+#endif
+
+    // Other micro:bit specific pins common to Interface and Target
+#if defined(TARGET_NRF52_MICROBIT_V2_IF_833)
+    COMBINED_SENSOR_INT = P0_9,
+#elif defined(TARGET_NRF52_MICROBIT_V2_IF_820)
+    COMBINED_SENSOR_INT = P0_16,
+#else
     COMBINED_SENSOR_INT = P0_25,
+#endif
 
     // UART
+#if defined(TARGET_NRF52_MICROBIT_V2_IF_833)
+    // TODO: Add UART TX and RX pins
+    RX_PIN_NUMBER  = NC,
+    TX_PIN_NUMBER  = NC,
+    // mBed interface Pins
+    CONSOLE_TX = NC,
+    CONSOLE_RX = NC,
+    STDIO_UART_TX = NC,
+    STDIO_UART_RX = NC,
+#elif defined(TARGET_NRF52_MICROBIT_V2_IF_820)
+    // TODO: Add UART TX and RX pins
+    RX_PIN_NUMBER  = NC,
+    TX_PIN_NUMBER  = NC,
+    // mBed interface Pins
+    CONSOLE_TX = NC,
+    CONSOLE_RX = NC,
+    STDIO_UART_TX = NC,
+    STDIO_UART_RX = NC,
+#else
     RX_PIN_NUMBER  = P1_8,
     TX_PIN_NUMBER  = P0_6,
-    CTS_PIN_NUMBER = p7,
-    RTS_PIN_NUMBER = p5,
-
     // mBed interface Pins
     CONSOLE_TX = TX_PIN_NUMBER,
     CONSOLE_RX = RX_PIN_NUMBER,
     STDIO_UART_TX = TX_PIN_NUMBER,
     STDIO_UART_RX = RX_PIN_NUMBER,
+#endif
+
+    CTS_PIN_NUMBER = NC,
+    RTS_PIN_NUMBER = NC,
+    // mBed interface Pins
     STDIO_UART_CTS = CTS_PIN_NUMBER,
     STDIO_UART_RTS = RTS_PIN_NUMBER,
 
+#if defined(MICROBIT_IF)
+    SPI_PSELMOSI0 = NC,
+    SPI_PSELMISO0 = NC,
+    SPI_PSELSS0   = NC,
+    SPI_PSELSCK0  = NC,
+#else
     SPI_PSELMOSI0 = P0_13,
     SPI_PSELMISO0 = P0_1,
     SPI_PSELSS0   = P1_2,
     SPI_PSELSCK0  = P0_17,
+#endif
 
+#if defined(TARGET_NRF52_MICROBIT_V2_IF_833)
+    // TODO: Include the internal I2C pins
+#elif defined(TARGET_NRF52_MICROBIT_V2_IF_820)
+    // TODO: Include the internal I2C pins
+#else
+    // Internal I2C
     I2C_SDA0 = P0_16,
     I2C_SCL0 = P0_8,
 
+    // External I2C at the edge connector
     I2C_SDA1 = P1_0,
     I2C_SCL1 = P0_26,
+#endif
 
     /**** QSPI pins ****/
-    QSPI1_IO0 = P0_20,
-    QSPI1_IO1 = P0_21,
-    QSPI1_IO2 = P0_22,
-    QSPI1_IO3 = P0_23,
-    QSPI1_SCK = P0_19,
-    QSPI1_CSN = P0_17,
+    QSPI1_IO0 = NC,
+    QSPI1_IO1 = NC,
+    QSPI1_IO2 = NC,
+    QSPI1_IO3 = NC,
+    QSPI1_SCK = NC,
+    QSPI1_CSN = NC,
 
     /**** QSPI FLASH pins ****/
-    QSPI_FLASH1_IO0 = QSPI1_IO0,
-    QSPI_FLASH1_IO1 = QSPI1_IO1,
-    QSPI_FLASH1_IO2 = QSPI1_IO2,
-    QSPI_FLASH1_IO3 = QSPI1_IO3,
-    QSPI_FLASH1_SCK = QSPI1_SCK,
-    QSPI_FLASH1_CSN = QSPI1_CSN,
-
-    // Not connected
-    NC = (int)0xFFFFFFFF
+    QSPI_FLASH1_IO0 = NC,
+    QSPI_FLASH1_IO1 = NC,
+    QSPI_FLASH1_IO2 = NC,
+    QSPI_FLASH1_IO3 = NC,
+    QSPI_FLASH1_SCK = NC,
+    QSPI_FLASH1_CSN = NC,
 } PinName;
 
 typedef enum {
