@@ -18,12 +18,14 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 
 ## Requirements
 
-- git
+- [Git](https://git-scm.com/downloads)
+- [Mercurial](https://www.mercurial-scm.org/downloads)
 - [Arm GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
     - v7.3.1 is the oldest and v10.2.1 the last tested versions
 - Python 3
+    - Tested with Python 3.7.12
 - [Mbed CLI](https://github.com/ARMmbed/mbed-cli)
-    - v1.10.2 is last tested version
+    - v1.10.2, and v1.10.5 are the last tested versions
     - Can be installed using one of the methods from the official documentation:
       https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html
     - The installers are outdated and not recommended
@@ -34,31 +36,36 @@ This is a basic Mbed OS project for [micro:bit V2](https://microbit.org/new-micr
 
 ### Available Targets
 
-As there are multiple revisions of the nRF52 board we are using multiple mbed
-targets.
+This project contains multiple Mbed OS "targets" for different versions of the
+micro:bit V2 board and for the Nordic nRF52833 DK development board.
 
-- `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing)
-- `nrf52_microbit_v1_43`: For the micro:bit v1.43.4 (nRF52833)
-- `nrf52_microbit_v1_44` /`nrf52_microbit_v1_45` / `nrf52_microbit_v1_46` /
-  `nrf52_microbit_v1_47`: These board versions do not really need a new target
-  and are the same as the `nrf52_microbit_v1_43`
-- `nrf52_microbit_v2`: This is essentially the same as `nrf52_microbit_v1_43`,
-  but since the board is currently only manufactured in the `S` variant, only
-  contains the LSM motion sensor (no FXOS), so it's useful to use this target
-  name to be able to do conditional compilation.
+- `nrf52_microbit_v2`: Target for all production micro:bit V2 board versions.
+- `nrf52833_dk`: For the Nordic nRF52833 DK board (useful for testing).
 
-The version of the board can be seen on the silkscreen at the back, near the
-right side of the edge connector.
+Other targets are available for micro:bit V2 prototype boards, and their
+names can be found in the [mbed_app.json](mbed_app.json) file.
+These are essentially the same as the `nrf52_microbit_v2` target, but for code
+to support multiple boards it is useful to have different target names to be
+able to do conditional compilation of pins, I2C addresses, etc, as shown in the
+[sensors.cpp example](examples/sensors.cpp) code.
 
-The branch `mbedos-softdevice` contains older targets.
+Even older prototype targets can be found in the `mbedos-softdevice` branch.
+
+The version of the micro:bit V2 board can be seen on the silkscreen at the
+back, near the right side of the edge connector.
 
 #### Interface MCU
 
 The micro:bit V2.2 contains an nRF52 microcontroller as the
 [Interface MCU](https://tech.microbit.org/software/daplink-interface/) and Mbed
-OS targets has been created 
+OS targets has been created to be able to target these Interface MCUs.
 
-### Initialise
+- `nrf52_microbit_v2_if_820`: Target for micro:bit V2.2 nRF52820 Interface MCU.
+- `nrf52_microbit_v2_if_833`: Fof a micro:bit V2.2 nRF52833 Interface MCU.
+  This target is configured to be identical to the nrf52820 builds, with the
+  only difference being some pin assignments.
+
+### Initialise the Project
 
 Note that for the `mbed target ...` line you should select the right target
 for your board.
