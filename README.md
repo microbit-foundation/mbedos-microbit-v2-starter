@@ -142,13 +142,6 @@ mbed_app.json:
 ```
 
 
-## Visual Studio Code
-
-At the moment we have the default config files from the Mbed online compiler
-project exporter. These are using removed `make` and have to be updated to use
-`mbed-cli`.
-
-
 ## Using NFC
 
 The Mbed board target created for the micro:bit configures the NFC pins as GPIO
