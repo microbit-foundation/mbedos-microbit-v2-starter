@@ -270,9 +270,13 @@ typedef enum {
 #endif
 
 #if defined(TARGET_NRF52_MICROBIT_V2_IF_833)
-    // TODO: Include the internal I2C pins
+    // Internal I2C
+    I2C_SDA0 = P0_28,
+    I2C_SCL0 = P0_29,
 #elif defined(TARGET_NRF52_MICROBIT_V2_IF_820)
-    // TODO: Include the internal I2C pins
+    // Internal I2C
+    I2C_SDA0 = P0_30,
+    I2C_SCL0 = P0_28,
 #else
     // Internal I2C
     I2C_SDA0 = P0_16,
