@@ -7,14 +7,28 @@
             "MCU_NRF52833"
         ],
         "static_memory_defines": false,
+        "device_has_add": [
+            "I2CSLAVE"
+        ],
         "macros_add": [
+            "NRF52833_XXAA",
+            "TARGET_NRF52833",
             "TARGET_MCU_NRF52833",
+            "NRFX_TWIS_ENABLED=1",
             "NRFX_RNG_ENABLED=1",
             "RNG_ENABLED=1",
-            "NRF_QUEUE_ENABLED=1"
+            "NRF_QUEUE_ENABLED=1",
+            "NRF52_PAN_20"
         ],
         "features_remove": [
             "CRYPTOCELL310"
+        ],
+        "device_has_remove": [
+            "QSPI",
+            "I2C_ASYNCH"
+        ],
+        "components_remove": [
+            "QSPIF"
         ],
         "macros_remove": [
             "MBEDTLS_CONFIG_HW_SUPPORT"
@@ -33,20 +47,6 @@
         "inherits": ["MCU_NRF52833"],
         "macros_add": [
             "WSF_MAX_HANDLERS=10",
-            "NRF52_PAN_12",
-            "NRF52_PAN_15",
-            "NRF52_PAN_20",
-            "NRF52_PAN_30",
-            "NRF52_PAN_31",
-            "NRF52_PAN_36",
-            "NRF52_PAN_51",
-            "NRF52_PAN_53",
-            "NRF52_PAN_54",
-            "NRF52_PAN_55",
-            "NRF52_PAN_58",
-            "NRF52_PAN_62",
-            "NRF52_PAN_63",
-            "NRF52_PAN_64",
             "CONFIG_NFCT_PINS_AS_GPIOS",
             "MICROBIT_TARGET"
         ],
@@ -72,8 +72,14 @@
     },
     "NRF52_MICROBIT_V2_IF_820": {
         "inherits": ["NRF52_MICROBIT_V2"],
-        "core": "Cortex-M4",
+        "device_has_remove": [
+            "ANALOGIN",
+            "PWMOUT"
+        ],
         "extra_labels_remove": [
+            "CORDIO",
+            "CORDIO_LL",
+            "NORDIC_CORDIO"
         ],
         "macros_add": [
             "MICROBIT_IF"
