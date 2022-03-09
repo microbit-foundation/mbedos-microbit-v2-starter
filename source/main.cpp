@@ -16,46 +16,45 @@
  */
 #include "mbed.h"
 
+#define ROW_COUNT   5
+#define COL_COUNT   5
+
 #if defined(MICROBIT_TARGET)
     // Main micro:bit target has access to the LED matrix and on-board features
-    DigitalOut rows[5] = {
+    DigitalOut rows[ROW_COUNT] = {
         DigitalOut(ROW_1, 0),
         DigitalOut(ROW_2, 0),
         DigitalOut(ROW_3, 0),
         DigitalOut(ROW_4, 0),
         DigitalOut(ROW_5, 0)
     };
-    DigitalOut cols[5] = {
+    DigitalOut cols[COL_COUNT] = {
         DigitalOut(COL_1, 1),
         DigitalOut(COL_2, 1),
         DigitalOut(COL_3, 1),
         DigitalOut(COL_4, 1),
         DigitalOut(COL_5, 1)
     };
-    bool led1;
-    bool led2;
+    bool led1 = false;
+    bool led2 = false;
 #else
     // The nRF52833 DK and micro:bit V2.2 IF MCU have access to direct LEDs
-    bool rows[5];
-    bool cols[5];
+    bool rows[ROW_COUNT];
+    bool cols[COL_COUNT];
     DigitalOut led1(LED1, 0);
     DigitalOut led2(LED2, 1);
 #endif
 
 int main(void) {
     // Infinite loop to blink the matrix LEDs if built for the target MCU or
-    // to toggle the orange and red USB LEDs if built for the interface MCU 
+    // to toggle the orange and red USB LEDs if built for the interface MCU
     while (true) {
-        for (int i = 0; i < 5; i++) {
-            rows[i] = 1;
-            int prev_i = i - 1;
-            if (prev_i < 0) prev_i = 4;
-            rows[prev_i] = 0;
-            for (int j = 0; j < 5; j++) {
-                cols[j] = 0;
-                int prev_j = j - 1;
-                if (prev_j < 0) prev_j = 4;
-                cols[prev_j] = 1;
+        for (int i = 0, prev_i = ROW_COUNT - 1; i < ROW_COUNT; ++i, prev_i = i - 1) {
+            rows[i] = true;
+            rows[prev_i] = false;
+            for (int j = 0, prev_j = COL_COUNT - 1; j < COL_COUNT; ++j, prev_j = j - 1) {
+                cols[j] = false;
+                cols[prev_j] = true;
 
                 led1 = !led1;
                 led2 = !led2;
