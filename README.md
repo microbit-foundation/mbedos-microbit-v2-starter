@@ -58,12 +58,15 @@ back, near the right side of the edge connector.
 
 The micro:bit V2.2 contains an nRF52 microcontroller as the
 [Interface MCU](https://tech.microbit.org/software/daplink-interface/) and Mbed
-OS targets has been created to be able to target these Interface MCUs.
+OS targets has been created to be able to create Mbed OS project for these
+microcontrollers as well.
 
-- `nrf52_microbit_v2_if_820`: Target for micro:bit V2.2 nRF52820 Interface MCU.
-- `nrf52_microbit_v2_if_833`: Fof a micro:bit V2.2 nRF52833 Interface MCU.
-  This target is configured to be identical to the nrf52820 builds, with the
-  only difference being some pin assignments.
+- `nrf52_microbit_v2_if_820`: Target for micro:bit V2.2 with a nRF52820
+  Interface MCU.
+- `nrf52_microbit_v2_if_833`: For a micro:bit V2.2 with a nRF52833 Interface
+  MCU. This target is configured to be identical to the nrf52820 builds
+  (including reduced RAM & Flash), with the only difference being some pin
+  assignments.
 
 ### Initialise the Project
 
