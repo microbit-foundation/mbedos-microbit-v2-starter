@@ -1,3 +1,9 @@
+-----
+
+⚠️ This branch has been left at an old commit with the last version of MbedOS that supported SoftDevice.
+
+-----
+
 # Example micro:bit V2 project for Mbed OS
 
 ## Table of contents
@@ -79,7 +85,10 @@ this is the last version to support Soft Device, which has been dropped in
 > SoftDevice Bluetooth stack is not supported. Bluetooth remains supported with
 > the help of Arm's Cordio stack.
 
-The [latest-mbedos](https://github.com/microbit-foundation/mbedos-microbit-v2-starter/tree/latest-mbedos)
+~~The [latest-mbedos](https://github.com/microbit-foundation/mbedos-microbit-v2-starter/tree/latest-mbedos)
+branch has been updated to use a newer version of MbedOS.~~
+
+The [master](https://github.com/microbit-foundation/mbedos-microbit-v2-starter/tree/master)
 branch has been updated to use a newer version of MbedOS.
 
 ### Mbed OS RTOS
